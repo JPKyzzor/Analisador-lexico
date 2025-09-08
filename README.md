@@ -12,4 +12,7 @@ Durante a disciplina, recebemos uma gramática de uma linguagem de programação
 
 ---
 
+## Para rodar o código
+ts-node analisador/main.ts
+
 > Projeto acadêmico — Ciência da Computação | Unesc
