@@ -1,0 +1,23 @@
+{
+  "name": "analisador-lexico",
+  "version": "1.0.0",
+  "description": "Este projeto foi desenvolvido para a disciplina de **Compiladores** no curso de Ciência da Computação da **Unesc**.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JPKyzzor/Analisador-lexico.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JPKyzzor/Analisador-lexico/issues"
+  },
+  "homepage": "https://github.com/JPKyzzor/Analisador-lexico#readme",
+  "devDependencies": {
+    "@types/node": "^24.3.1"
+  }
+}
