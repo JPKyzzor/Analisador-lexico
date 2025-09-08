@@ -77,7 +77,9 @@ export class AnalisadorLexico {
 
   private handleUnknownCharacter(char: string): void {
     console.log(
-      `❌ Caracter não reconhecido '${char}' na linha ${this.line+1}, caracter ${this.column}`
+      `❌ Caracter não reconhecido '${char}' na linha ${
+        this.line + 1
+      }, caracter ${this.column}`
     );
   }
 

@@ -9,7 +9,8 @@ interface StateResponse {
 
 export class StateFactory {
   static create(caracter: string): State | undefined {
-    if (/[a-z]/.test(caracter)) return new StatePalavrasReservadas(); //1,2,3,4,10,12,13,14,16,17,18,19,20,21,22,23,24
+    //Por enquanto, o state de variaveis já faz o trabalho de palavras reservadas, vamos usar isso depois
+    //if (/[a-z]/.test(caracter)) return new StatePalavrasReservadas(); //1,2,3,4,10,12,13,14,16,17,18,19,20,21,22,23,24
     if (/[0-9]/.test(caracter)) return new StateNumero(); //5,6
     if (/[a-zA-Z_]/.test(caracter)) return new StateNomeVariavel(); //7
     if (caracter === "'") return new StateNomeDoChar(); //8

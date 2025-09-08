@@ -1,21 +1,13 @@
-analisador teste 1231
-teste
-toma
-123.1
-vamo gremio '' `aeauheheuihaeiheai`   "gremio" "gre
-mio"
-> >= >>
-= ==
-< <= <<
-gremio
-+ ++gremio
-grem+io
-!=
-//agora tem comentario pog@@@
-{}(),*:;$/
-
-/* comentario
-em
-bloco
-lolllll
-*/
+tipoDoRetorno nomeDaFuncao (integer parametro1; string parametro2){
+		// declaracoes das variaveis
+		// declaracoes de funcoes
+inicio
+		//corpo com a logica
+	;
+fim
+// Todas funções que não são a main, deverão ter um return vazio caso // sejam void ou com UMA variavel/valor
+	return()
+	//ou 
+	return(algumaVariavel) 
+	//Valores fixos também são permitidos ex: return(“Oi”)
+}
