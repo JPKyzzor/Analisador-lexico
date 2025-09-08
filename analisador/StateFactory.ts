@@ -9,14 +9,17 @@ interface StateResponse {
 
 export class StateFactory {
   static create(caracter: string): State | undefined {
-    if (/[a-z]/.test(caracter)) return new NoPalavrasReservadas();
-    if (/[a-zA-Z_]/.test(caracter)) return new NoNomeVariavel();
-    if (/[0-9]/.test(caracter)) return new NoNumero();
+    if (/[a-z]/.test(caracter)) return new StatePalavrasReservadas();
+    if (/[a-zA-Z_]/.test(caracter)) return new StateNomeVariavel();
+    if (/[0-9]/.test(caracter)) return new StateNumero();
+    if (caracter === "'") return new StateNomeDoChar();
+    if (caracter === "`") return new StateLiteral();
+    if (caracter === '"') return new StateNomeDaString();
     return undefined;
   }
 }
 
-class NoPalavrasReservadas implements State {
+class StatePalavrasReservadas implements State {
   process(codigo: string, index: number): StateResponse {
     let analisedCharacters = 0;
     //enquanto for letras minusculas
@@ -31,7 +34,7 @@ class NoPalavrasReservadas implements State {
   }
 }
 
-class NoNomeVariavel implements State {
+class StateNomeVariavel implements State {
   process(codigo: string, index: number): StateResponse {
     let analisedCharacters = 0;
 
@@ -43,10 +46,7 @@ class NoNomeVariavel implements State {
     index++;
 
     // Pode seguir com letras (maiusculas/minusculas), números ou _
-    while (
-      codigo[index] &&
-      codigo[index].match(/[a-zA-Z0-9_]/)
-    ) {
+    while (codigo[index] && codigo[index].match(/[a-zA-Z0-9_]/)) {
       analisedCharacters++;
       index++;
     }
@@ -58,7 +58,7 @@ class NoNomeVariavel implements State {
   }
 }
 
-class NoNumero implements State {
+class StateNumero implements State {
   process(codigo: string, index: number): StateResponse {
     let analisedCharacters = 0;
     let hasDot = false;
@@ -89,5 +89,47 @@ class NoNumero implements State {
       success: true,
       analisedCharacters,
     };
+  }
+}
+
+class StateNomeDoChar implements State {
+  process(codigo: string, index: number): StateResponse {
+    if (codigo[index+1] === "'") {
+      return { success: true, analisedCharacters: 2 };
+    }
+    if (codigo[index+2] === "'") {
+      return { success: true, analisedCharacters: 3 };
+    }
+    return { success: false, analisedCharacters: 3 };
+  }
+}
+
+class StateLiteral implements State {
+  process(codigo: string, index: number) {
+    let i = index + 1;
+    while (i < codigo.length && codigo[i] !== "`") {
+      i++;
+    }
+
+    if (i >= codigo.length) {
+      return { success: false, analisedCharacters: i - index };
+    }
+
+    return { success: true, analisedCharacters: i - index + 1 };
+  }
+}
+
+class StateNomeDaString implements State {
+  process(codigo: string, index: number) {
+    let i = index + 1;
+    while (i < codigo.length && codigo[i] !== '"') {
+      i++;
+    }
+
+    if (i >= codigo.length) {
+      return { success: false, analisedCharacters: i - index };
+    }
+
+    return { success: true, analisedCharacters: i - index + 1 }; // aceita vazio "" ou conteúdo
   }
 }

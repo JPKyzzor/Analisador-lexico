@@ -21,12 +21,10 @@ export class AnalisadorLexico {
     while (this.hasText()) {
       const char = this.codigo[this.index];
 
-      // Nova linha → atualiza linha/coluna
       if (this.isEndOfLineCheck(char)) {
         continue;
       }
 
-      // Espaço, tabulação etc.
       if (this.isWhitespaceCheck(char)) {
         continue;
       }
