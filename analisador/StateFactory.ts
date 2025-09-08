@@ -15,6 +15,7 @@ export class StateFactory {
     if (caracter === "'") return new StateNomeDoChar();
     if (caracter === "`") return new StateLiteral();
     if (caracter === '"') return new StateNomeDaString();
+    if (caracter === ">") return new StateMaior();
     return undefined;
   }
 }
@@ -94,10 +95,10 @@ class StateNumero implements State {
 
 class StateNomeDoChar implements State {
   process(codigo: string, index: number): StateResponse {
-    if (codigo[index+1] === "'") {
+    if (codigo[index + 1] === "'") {
       return { success: true, analisedCharacters: 2 };
     }
-    if (codigo[index+2] === "'") {
+    if (codigo[index + 2] === "'") {
       return { success: true, analisedCharacters: 3 };
     }
     return { success: false, analisedCharacters: 3 };
@@ -131,5 +132,18 @@ class StateNomeDaString implements State {
     }
 
     return { success: true, analisedCharacters: i - index + 1 }; // aceita vazio "" ou conteúdo
+  }
+}
+
+class StateMaior implements State {
+  process(codigo: string, index: number): StateResponse {
+    const nextChar = codigo[index + 1];
+    if (nextChar === ">") {
+      return { analisedCharacters: 2, success: true };
+    }
+    if (nextChar === "=") {
+      return { analisedCharacters: 2, success: true };
+    }
+    return { analisedCharacters: 1, success: true };
   }
 }

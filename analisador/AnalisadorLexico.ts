@@ -77,7 +77,7 @@ export class AnalisadorLexico {
 
   private handleUnknownCharacter(char: string): void {
     console.log(
-      `❌ Caracter não reconhecido '${char}' na linha ${this.line}, caracter ${this.column}`
+      `❌ Caracter não reconhecido '${char}' na linha ${this.line+1}, caracter ${this.column}`
     );
   }
 
@@ -87,7 +87,7 @@ export class AnalisadorLexico {
     length: number
   ): void {
     console.log(
-      `❌ Erro léxico na linha ${line}, caracter ${column} até caracter ${
+      `❌ Erro léxico na linha ${line + 1}, caracter ${column} até caracter ${
         column + length
       }`
     );
