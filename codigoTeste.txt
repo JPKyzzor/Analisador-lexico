@@ -5,3 +5,17 @@ toma
 vamo gremio '' `aeauheheuihaeiheai`   "gremio" "gre
 mio"
 > >= >>
+= ==
+< <= <<
+gremio
++ ++gremio
+grem+io
+!=
+//agora tem comentario pog@@@
+{}(),*:;$/
+
+/* comentario
+em
+bloco
+lolllll
+*/

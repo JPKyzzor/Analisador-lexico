@@ -9,14 +9,35 @@ interface StateResponse {
 
 export class StateFactory {
   static create(caracter: string): State | undefined {
-    if (/[a-z]/.test(caracter)) return new StatePalavrasReservadas();
-    if (/[a-zA-Z_]/.test(caracter)) return new StateNomeVariavel();
-    if (/[0-9]/.test(caracter)) return new StateNumero();
-    if (caracter === "'") return new StateNomeDoChar();
-    if (caracter === "`") return new StateLiteral();
-    if (caracter === '"') return new StateNomeDaString();
-    if (caracter === ">") return new StateMaior();
+    if (/[a-z]/.test(caracter)) return new StatePalavrasReservadas(); //1,2,3,4,10,12,13,14,16,17,18,19,20,21,22,23,24
+    if (/[0-9]/.test(caracter)) return new StateNumero(); //5,6
+    if (/[a-zA-Z_]/.test(caracter)) return new StateNomeVariavel(); //7
+    if (caracter === "'") return new StateNomeDoChar(); //8
+    if (caracter === '"') return new StateNomeDaString(); //9
+    if (caracter === "`") return new StateLiteral(); //11
+    if (caracter === ">") return new StateMaior(); //25,26,27
+    if (caracter === "=") return new StateIgual(); //28, 29
+    if (caracter === "<") return new StateMenor(); //30,31,32
+    if (caracter === "+") return new StateMais(); //33, 34
+    if (caracter === "}") return new MonoState(); //35
+    if (caracter === "{") return new MonoState(); //36
+    if (caracter === ";") return new MonoState(); //37
+    if (caracter === ":") return new MonoState(); //38
+    if (caracter === "/") return new StateBarra(); //39 e comentario inline e em bloco
+    if (caracter === ",") return new MonoState(); //40
+    if (caracter === "*") return new MonoState(); //41
+    if (caracter === ")") return new MonoState(); //42
+    if (caracter === "(") return new MonoState(); //43
+    if (caracter === "$") return new MonoState(); //44
+    if (caracter === "!") return new StateDiferente(); //45
+    if (caracter === "-") return new StateMenos(); //46, 47
     return undefined;
+  }
+}
+
+class MonoState implements State {
+  process(codigo: string, index: number): StateResponse {
+    return { success: true, analisedCharacters: 1 };
   }
 }
 
@@ -145,5 +166,89 @@ class StateMaior implements State {
       return { analisedCharacters: 2, success: true };
     }
     return { analisedCharacters: 1, success: true };
+  }
+}
+
+class StateMenor implements State {
+  process(codigo: string, index: number): StateResponse {
+    const nextChar = codigo[index + 1];
+    if (nextChar === "<") {
+      return { analisedCharacters: 2, success: true };
+    }
+    if (nextChar === "=") {
+      return { analisedCharacters: 2, success: true };
+    }
+    return { analisedCharacters: 1, success: true };
+  }
+}
+
+class StateIgual implements State {
+  process(codigo: string, index: number): StateResponse {
+    const nextChar = codigo[index + 1];
+    if (nextChar === "=") {
+      return { analisedCharacters: 2, success: true };
+    }
+    return { analisedCharacters: 1, success: true };
+  }
+}
+
+class StateMais implements State {
+  process(codigo: string, index: number): StateResponse {
+    const nextChar = codigo[index + 1];
+    if (nextChar === "+") {
+      return { analisedCharacters: 2, success: true };
+    }
+    return { analisedCharacters: 1, success: true };
+  }
+}
+
+class StateMenos implements State {
+  process(codigo: string, index: number): StateResponse {
+    const nextChar = codigo[index + 1];
+    if (nextChar === "-") {
+      return { analisedCharacters: 2, success: true };
+    }
+    return { analisedCharacters: 1, success: true };
+  }
+}
+
+class StateDiferente implements State {
+  process(codigo: string, index: number): StateResponse {
+    const nextChar = codigo[index + 1];
+    if (nextChar === "=") {
+      return { analisedCharacters: 2, success: true };
+    }
+    return { analisedCharacters: 2, success: false };
+  }
+}
+class StateBarra implements State {
+  process(codigo: string, index: number): StateResponse {
+    const nextChar = codigo[index + 1];
+
+    // Comentário de linha //
+    if (nextChar === "/") {
+      let i = index + 2;
+      while (i < codigo.length && codigo[i] !== "\n") {
+        i++;
+      }
+      return { success: true, analisedCharacters: i - index };
+    }
+
+    // Comentário de bloco /* ... */
+    if (nextChar === "-") {
+      let i = index + 2;
+      while (i < codigo.length - 1) {
+        if (codigo[i] === "-" && codigo[i + 1] === "/") {
+          i += 2;
+          return { success: true, analisedCharacters: i - index };
+        }
+        i++;
+      }
+      //não fechou comentario
+      return { success: false, analisedCharacters: codigo.length - index };
+    }
+
+    //operador
+    return { success: true, analisedCharacters: 1 };
   }
 }
