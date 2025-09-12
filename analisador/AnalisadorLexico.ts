@@ -14,9 +14,6 @@ export class AnalisadorLexico {
     this.codigo = fs.readFileSync(filePath, "utf8");
   }
 
-  /**
-   * Executa a análise léxica e retorna o array de tokens.
-   */
   public Execute(): TokenInfo[] {
     const tokenArray: TokenInfo[] = [];
     this.index = 0;
