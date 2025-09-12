@@ -13,7 +13,7 @@ import { StateNomeDoChar } from "./states/8.StateNomeDoChar";
 import { StateNomeDaString } from "./states/9.StateNomeDaString";
 
 export interface State {
-  process(codigo: string, index: number): StateResponse;
+  process(inputCode: string, index: number): StateResponse;
 }
 
 export class StateFactory {

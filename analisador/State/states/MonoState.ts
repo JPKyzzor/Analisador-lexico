@@ -7,7 +7,7 @@ export class MonoState extends BaseState {
     super();
   }
 
-  process(codigo: string, index: number): StateResponse {
-    return this.success(codigo, this.tokenCode, index, 1);
+  process(inputCode: string, index: number): StateResponse {
+    return this.success(inputCode, this.tokenCode, index, 1);
   }
 }

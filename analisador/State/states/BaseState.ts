@@ -25,5 +25,5 @@ export abstract class BaseState implements State {
     };
   }
 
-  abstract process(codigo: string, index: number): StateResponse;
+  abstract process(inputCode: string, index: number): StateResponse;
 }

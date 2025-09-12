@@ -2,7 +2,7 @@ import * as fs from "fs";
 import { StateFactory, TokenInfo } from "./State/StateFactory";
 
 export class AnalisadorLexico {
-  private codigo: string;
+  private inputCode: string;
   private line: number = 1;
   private column: number = 1;
   private index: number = 0;
@@ -11,7 +11,7 @@ export class AnalisadorLexico {
     if (!fs.existsSync(filePath)) {
       throw new Error(`Arquivo não encontrado: ${filePath}`);
     }
-    this.codigo = fs.readFileSync(filePath, "utf8");
+    this.inputCode = fs.readFileSync(filePath, "utf8");
   }
 
   public Execute(): TokenInfo[] {
@@ -21,7 +21,7 @@ export class AnalisadorLexico {
     this.line = 1;
 
     while (this.hasText()) {
-      const char = this.codigo[this.index];
+      const char = this.inputCode[this.index];
 
       if (this.isEndOfLineCheck(char)) continue;
       if (this.isWhitespaceCheck(char)) continue;
@@ -32,7 +32,7 @@ export class AnalisadorLexico {
         return tokenArray; // retorna até onde conseguiu
       }
 
-      const response = state.process(this.codigo, this.index);
+      const response = state.process(this.inputCode, this.index);
       if (!response.success) {
         this.handleLexicalError(
           this.line,
@@ -65,7 +65,7 @@ export class AnalisadorLexico {
   }
 
   private hasText(): boolean {
-    return this.index < this.codigo.length;
+    return this.index < this.inputCode.length;
   }
 
   private isWhitespaceCheck(char: string): boolean {
