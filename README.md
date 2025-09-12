@@ -30,4 +30,4 @@ Na pasta `assets`, você encontrará os seguintes arquivos:
 Para rodar o projeto, execute o seguinte comando no terminal:
 
 ```bash
-ts-node analisador/main.ts
+npm run start
