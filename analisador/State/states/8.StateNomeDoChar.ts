@@ -9,6 +9,6 @@ export class StateNomeDoChar extends BaseState {
     if (inputCode[start + 2] === "'") {
       return this.success(inputCode, TOKEN_CODES.NOMEDOCHAR, start, 3);
     }
-    return { success: false, analisedCharacters: 3 };
+    return this.fail(3)
   }
 }

@@ -8,7 +8,7 @@ export class StateNomeVariavel extends BaseState {
     let analisedCharacters = 0;
 
     if (!inputCode[index].match(/[a-z]/)) {
-      return { success: false, analisedCharacters: 1 };
+      return this.fail(1);
     }
 
     analisedCharacters++;

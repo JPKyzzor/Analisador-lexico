@@ -13,7 +13,9 @@ fim
 	aalores fixos tambem soo permitidos ex: return("Oi")
 	"aaa"
 }
+
 /-
-qualquer coisa @@@ "
+qualquer coisa @@@
 -/
 =
+"aaaaaa"

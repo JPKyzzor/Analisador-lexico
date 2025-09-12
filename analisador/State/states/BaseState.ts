@@ -5,7 +5,8 @@ export abstract class BaseState implements State {
     inputCode: string,
     tokenCode: number,
     startIndex: number,
-    analisedCharacters: number
+    analisedCharacters: number,
+    analisedLines: number = 0
   ): StateResponse {
     const tokenInfo: TokenInfo = {
       code: tokenCode,
@@ -14,14 +15,16 @@ export abstract class BaseState implements State {
     return {
       success: true,
       analisedCharacters,
+      analisedLines,
       tokenInfo,
     };
   }
 
-  protected fail(analisedCharacters: number): StateResponse {
+  protected fail(analisedCharacters: number, analisedLines = 0): StateResponse {
     return {
       success: false,
       analisedCharacters,
+      analisedLines
     };
   }
 

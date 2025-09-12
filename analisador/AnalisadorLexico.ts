@@ -15,8 +15,8 @@ export class AnalisadorLexico {
     this.inputCode = fs.readFileSync(filePath, "utf8");
   }
 
-  public Execute(): TokenInfo[] {
-    const tokenArray: TokenInfo[] = [];
+  public Execute(): { tokens: TokenInfo[]; errorMessage?: string } {
+    const tokens: TokenInfo[] = [];
     this.index = 0;
     this.column = 1;
     this.line = 1;
@@ -29,31 +29,31 @@ export class AnalisadorLexico {
 
       const state = StateFactory.create(char);
       if (!state) {
-        this.handleUnknownCharacter(char);
-        return tokenArray; // retorna até onde conseguiu
+        const errorMessage = this.handleUnknownCharacter(char);
+        return { tokens, errorMessage}; // retorna até onde conseguiu
       }
 
       const response = state.process(this.inputCode, this.index);
       if (!response.success) {
-        this.handleLexicalError(
+        const errorMessage = this.handleLexicalError(
           this.line,
           this.column,
-          response.analisedCharacters
         );
-        return tokenArray; // retorna até onde conseguiu
+        return { tokens, errorMessage }; // retorna até onde conseguiu
       }
 
       this.index += response.analisedCharacters;
       this.column += response.analisedCharacters;
+      this.line += response.analisedLines;
 
       if (this.isCommentToken(response.tokenInfo)) continue;
-      
+
       response.tokenInfo.line = this.line;
-      tokenArray.push(response.tokenInfo);
+      tokens.push(response.tokenInfo);
     }
 
     this.handleValidationSuccess();
-    return tokenArray;
+    return { tokens };
   }
 
   private isEndOfLineCheck(char: string): boolean {
@@ -83,22 +83,15 @@ export class AnalisadorLexico {
     return isWhitespace;
   }
 
-  private handleUnknownCharacter(char: string): void {
-    console.log(
-      `❌ Caracter não reconhecido '${char}' na linha ${this.line}, caracter ${this.column}`
-    );
+  private handleUnknownCharacter(char: string): string {
+    return `❌ Caracter não reconhecido '${char}' na linha ${this.line}, caracter ${this.column}`;
   }
 
   private handleLexicalError(
     line: number,
     column: number,
-    length: number
-  ): void {
-    console.log(
-      `❌ Erro léxico na linha ${line}, caracter ${column} até caracter ${
-        column + length
-      }`
-    );
+  ): string {
+    return `❌ Erro léxico próximo da linha ${line}, caracter ${column}`;
   }
 
   private handleValidationSuccess(): void {

@@ -6,12 +6,20 @@ const inputPath = path.join(__dirname, "assets", "input.txt");
 const outputPath = path.join(__dirname, "assets", "output.txt");
 
 const analisador = new AnalisadorLexico(inputPath);
-const tokens = analisador.Execute();
-console.log(tokens)
+const analisadorOutput = analisador.Execute();
+console.log(analisadorOutput.tokens);
 
 // Monta o output (códigos separados por espaço)
-const output = tokens.map(token => token.code).join(" ");
+let outputString: string;
 
-// Escreve no arquivo
-fs.writeFileSync(outputPath, output, "utf8");
-console.log(`✅ Output salvo em: ${outputPath}`);
+if (!analisadorOutput.errorMessage) {
+  console.log("✅ Código validado com sucesso.");
+  outputString = analisadorOutput.tokens
+  .map((token) => `${token.code} ${token.value} ${token.line}`)
+  .join("\n");
+  fs.writeFileSync(outputPath, outputString, "utf8");
+} else {
+  console.log(analisadorOutput.errorMessage)
+  outputString = analisadorOutput.errorMessage;
+}
+fs.writeFileSync(outputPath, outputString, "utf8");

@@ -25,7 +25,14 @@ export class StateBarra extends BaseState {
     // Comentário de bloco /* ... */
     if (nextChar === "-") {
       let i = index + 2;
+      let linesJumped = 0;
       while (i < inputCode.length - 1) {
+        if(inputCode[i] === "\n"){
+          linesJumped++;
+          i++
+          continue;
+        }
+
         if (inputCode[i] === "-" && inputCode[i + 1] === "/") {
           i += 2;
           const analisedCharacters = i - index;
@@ -33,7 +40,8 @@ export class StateBarra extends BaseState {
             inputCode,
             TOKEN_CODES.COMENTARIO,
             start,
-            analisedCharacters
+            analisedCharacters,
+            linesJumped
           );
         }
         i++;
