@@ -41,7 +41,7 @@ export enum TOKEN_CODES {
   ASTERISCO = 41,      // *
   FECHA_PARENTESES = 42,// )
   ABRE_PARENTESES = 43, // (
-  DOLAR = 44,          // $
+  CIFRAO = 44,          // $
   DIFERENTE = 45,      // !=
   DECREMENTO = 46,     // --
   MENOS = 47,           // -

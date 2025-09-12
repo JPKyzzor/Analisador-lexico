@@ -1,5 +1,6 @@
 import * as fs from "fs";
 import { StateFactory, TokenInfo } from "./State/StateFactory";
+import { TOKEN_CODES } from "./enum/TokenCodes.enum";
 
 export class AnalisadorLexico {
   private inputCode: string;
@@ -45,9 +46,10 @@ export class AnalisadorLexico {
       this.index += response.analisedCharacters;
       this.column += response.analisedCharacters;
 
-      if (response.tokenInfo) {
-        tokenArray.push(response.tokenInfo);
-      }
+      if (this.isCommentToken(response.tokenInfo)) continue;
+      
+      response.tokenInfo.line = this.line;
+      tokenArray.push(response.tokenInfo);
     }
 
     this.handleValidationSuccess();
@@ -66,6 +68,10 @@ export class AnalisadorLexico {
 
   private hasText(): boolean {
     return this.index < this.inputCode.length;
+  }
+
+  private isCommentToken(tokenInfo: TokenInfo): boolean {
+    return tokenInfo.code === TOKEN_CODES.COMENTARIO;
   }
 
   private isWhitespaceCheck(char: string): boolean {

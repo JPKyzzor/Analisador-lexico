@@ -7,6 +7,7 @@ const outputPath = path.join(__dirname, "assets", "output.txt");
 
 const analisador = new AnalisadorLexico(inputPath);
 const tokens = analisador.Execute();
+console.log(tokens)
 
 // Monta o output (códigos separados por espaço)
 const output = tokens.map(token => token.code).join(" ");

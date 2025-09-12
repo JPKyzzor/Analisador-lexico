@@ -11,6 +11,7 @@ import { StateMenos } from "./states/46-47.StateMenos";
 import { StateNumero } from "./states/5-6.StateNumeros";
 import { StateNomeDoChar } from "./states/8.StateNomeDoChar";
 import { StateNomeDaString } from "./states/9.StateNomeDaString";
+import { TOKEN_CODES } from "../enum/TokenCodes.enum";
 
 export interface State {
   process(inputCode: string, index: number): StateResponse;
@@ -27,16 +28,16 @@ export class StateFactory {
     if (caracter === "=") return new StateIgual(); //28, 29
     if (caracter === "<") return new StateMenor(); //30,31,32
     if (caracter === "+") return new StateMais(); //33, 34
-    if (caracter === "}") return new MonoState(35); //35
-    if (caracter === "{") return new MonoState(36); //36
-    if (caracter === ";") return new MonoState(37); //37
-    if (caracter === ":") return new MonoState(38); //38
+    if (caracter === "}") return new MonoState(TOKEN_CODES.FECHA_CHAVE); //35
+    if (caracter === "{") return new MonoState(TOKEN_CODES.ABRE_CHAVE); //36
+    if (caracter === ";") return new MonoState(TOKEN_CODES.PONTO_E_VIRGULA); //37
+    if (caracter === ":") return new MonoState(TOKEN_CODES.DOIS_PONTOS); //38
     if (caracter === "/") return new StateBarra(); //39 e comentario inline e em bloco
-    if (caracter === ",") return new MonoState(40); //40
-    if (caracter === "*") return new MonoState(41); //41
-    if (caracter === ")") return new MonoState(42); //42
-    if (caracter === "(") return new MonoState(43); //43
-    if (caracter === "$") return new MonoState(44); //44
+    if (caracter === ",") return new MonoState(TOKEN_CODES.VIRGULA); //40
+    if (caracter === "*") return new MonoState(TOKEN_CODES.ASTERISCO); //41
+    if (caracter === ")") return new MonoState(TOKEN_CODES.FECHA_PARENTESES); //42
+    if (caracter === "(") return new MonoState(TOKEN_CODES.ABRE_PARENTESES); //43
+    if (caracter === "$") return new MonoState(TOKEN_CODES.CIFRAO); //44
     if (caracter === "!") return new StateDiferente(); //45
     if (caracter === "-") return new StateMenos(); //46, 47
     return undefined;
@@ -58,5 +59,6 @@ export type StateResponse =
 export type TokenInfo = {
   code: number;
   value: string;
+  line?: number;
 }
 
