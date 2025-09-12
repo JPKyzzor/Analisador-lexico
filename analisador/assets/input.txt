@@ -4,10 +4,16 @@ tipoDoRetorno nomeDaFuncao (integer parametro1; string parametro2){
 inicio
 		//corpo com a logica
 	;
+	
 fim
 // Todas funções que não são a main, deverão ter um return vazio caso // sejam void ou com UMA variavel/valor
 	return()
 	//ou 
 	return(algumaVariavel) 
-	//Valores fixos também são permitidos ex: return(“Oi”)
+	aalores fixos tambem soo permitidos ex: return("Oi")
+	"aaa"
 }
+/-
+qualquer coisa @@@ "
+-/
+=

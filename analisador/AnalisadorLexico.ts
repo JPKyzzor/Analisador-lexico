@@ -1,5 +1,5 @@
 import * as fs from "fs";
-import { StateFactory } from "./StateFactory";
+import { StateFactory, TokenInfo } from "./State/StateFactory";
 
 export class AnalisadorLexico {
   private codigo: string;
@@ -14,25 +14,25 @@ export class AnalisadorLexico {
     this.codigo = fs.readFileSync(filePath, "utf8");
   }
 
-  public Execute(): void {
+  /**
+   * Executa a análise léxica e retorna o array de tokens.
+   */
+  public Execute(): TokenInfo[] {
+    const tokenArray: TokenInfo[] = [];
     this.index = 0;
     this.column = 1;
     this.line = 1;
+
     while (this.hasText()) {
       const char = this.codigo[this.index];
 
-      if (this.isEndOfLineCheck(char)) {
-        continue;
-      }
-
-      if (this.isWhitespaceCheck(char)) {
-        continue;
-      }
+      if (this.isEndOfLineCheck(char)) continue;
+      if (this.isWhitespaceCheck(char)) continue;
 
       const state = StateFactory.create(char);
       if (!state) {
         this.handleUnknownCharacter(char);
-        return;
+        return tokenArray; // retorna até onde conseguiu
       }
 
       const response = state.process(this.codigo, this.index);
@@ -42,14 +42,19 @@ export class AnalisadorLexico {
           this.column,
           response.analisedCharacters
         );
-        return;
+        return tokenArray; // retorna até onde conseguiu
       }
 
       this.index += response.analisedCharacters;
       this.column += response.analisedCharacters;
+
+      if (response.tokenInfo) {
+        tokenArray.push(response.tokenInfo);
+      }
     }
 
     this.handleValidationSuccess();
+    return tokenArray;
   }
 
   private isEndOfLineCheck(char: string): boolean {
@@ -77,9 +82,7 @@ export class AnalisadorLexico {
 
   private handleUnknownCharacter(char: string): void {
     console.log(
-      `❌ Caracter não reconhecido '${char}' na linha ${
-        this.line + 1
-      }, caracter ${this.column}`
+      `❌ Caracter não reconhecido '${char}' na linha ${this.line}, caracter ${this.column}`
     );
   }
 
@@ -89,7 +92,7 @@ export class AnalisadorLexico {
     length: number
   ): void {
     console.log(
-      `❌ Erro léxico na linha ${line + 1}, caracter ${column} até caracter ${
+      `❌ Erro léxico na linha ${line}, caracter ${column} até caracter ${
         column + length
       }`
     );

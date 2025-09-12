@@ -7,7 +7,7 @@
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "strict": true,
-    "outDir": "./dist",
+    "outDir": "analisador/main/dist",
     "types": ["node"]
   }
 }
