@@ -15,7 +15,7 @@ export class AnalisadorLexico {
     this.inputCode = fs.readFileSync(filePath, "utf8");
   }
 
-  public Execute(): { tokens: TokenInfo[]; errorMessage?: string } {
+  public Execute(): TokenInfo[]{
     const tokens: TokenInfo[] = [];
     this.index = 0;
     this.column = 1;
@@ -29,17 +29,12 @@ export class AnalisadorLexico {
 
       const state = StateFactory.create(char);
       if (!state) {
-        const errorMessage = this.handleUnknownCharacter(char);
-        return { tokens, errorMessage}; // retorna até onde conseguiu
+        throw new Error(this.handleUnknownCharacter(char));
       }
 
       const response = state.process(this.inputCode, this.index);
       if (!response.success) {
-        const errorMessage = this.handleLexicalError(
-          this.line,
-          this.column,
-        );
-        return { tokens, errorMessage }; // retorna até onde conseguiu
+        throw new Error(this.handleLexicalError());
       }
 
       this.index += response.analisedCharacters;
@@ -53,7 +48,7 @@ export class AnalisadorLexico {
     }
 
     this.handleValidationSuccess();
-    return { tokens };
+    return tokens; 
   }
 
   private isEndOfLineCheck(char: string): boolean {
@@ -87,11 +82,8 @@ export class AnalisadorLexico {
     return `❌ Caracter não reconhecido '${char}' na linha ${this.line}, caracter ${this.column}`;
   }
 
-  private handleLexicalError(
-    line: number,
-    column: number,
-  ): string {
-    return `❌ Erro léxico próximo da linha ${line}, caracter ${column}`;
+  private handleLexicalError(): string {
+    return `❌ Erro léxico próximo da linha ${this.line}, caracter ${this.column}`;
   }
 
   private handleValidationSuccess(): void {
