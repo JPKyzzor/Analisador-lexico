@@ -48,13 +48,13 @@ export type StateResponse =
   | {
       success: true;
       analisedCharacters: number;
-      analisedLines: number
+      analisedLines: number;
       tokenInfo: TokenInfo;
     }
   | {
       success: false;
       analisedCharacters: number;
-      analisedLines: number
+      analisedLines: number;
       tokenInfo?: never;
     };
 
@@ -62,5 +62,4 @@ export type TokenInfo = {
   code: number;
   value: string;
   line?: number;
-}
-
+};

@@ -1,21 +1,24 @@
 import * as fs from "fs";
 import { StateFactory, TokenInfo } from "./State/StateFactory";
 import { TOKEN_CODES } from "./enum/TokenCodes.enum";
+import path from "path";
 
 export class AnalisadorLexico {
   private inputCode: string;
   private line: number = 1;
   private column: number = 1;
   private index: number = 0;
+  private fileName: string = "";
 
   constructor(filePath: string) {
     if (!fs.existsSync(filePath)) {
       throw new Error(`Arquivo não encontrado: ${filePath}`);
     }
     this.inputCode = fs.readFileSync(filePath, "utf8");
+    this.fileName = path.basename(filePath);
   }
 
-  public Execute(): TokenInfo[]{
+  public Execute(): TokenInfo[] {
     const tokens: TokenInfo[] = [];
     this.index = 0;
     this.column = 1;
@@ -48,7 +51,7 @@ export class AnalisadorLexico {
     }
 
     this.handleValidationSuccess();
-    return tokens; 
+    return tokens;
   }
 
   private isEndOfLineCheck(char: string): boolean {
@@ -79,14 +82,14 @@ export class AnalisadorLexico {
   }
 
   private handleUnknownCharacter(char: string): string {
-    return `❌ Caracter não reconhecido '${char}' na linha ${this.line}, caracter ${this.column}`;
+    return `❌ Caracter não reconhecido '${char}' na linha ${this.line}, caracter ${this.column}, arquivo: ${this.fileName}`;
   }
 
   private handleLexicalError(): string {
-    return `❌ Erro léxico próximo da linha ${this.line}, caracter ${this.column}`;
+    return `❌ Erro léxico próximo da linha ${this.line}, caracter ${this.column}, arquivo: ${this.fileName}`;
   }
 
   private handleValidationSuccess(): void {
-    console.log("✅ Código validado com sucesso.");
+    console.log(`✅ Código do arquivo ${this.fileName} validado com sucesso.`);
   }
 }

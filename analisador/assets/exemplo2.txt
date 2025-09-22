@@ -1,0 +1,11 @@
+inicio
+    if (integerA >= 18){
+        if (integerA <= 100){
+            cout << "Você é maior de idade e está vivo :";
+        }else{
+            cout << "Você provavelmente é bem velho ou mentiroso.";
+        };
+    }else{
+        cout << "Você é menor de idade";
+    };
+fim

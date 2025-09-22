@@ -1,0 +1,5 @@
+nomeAluno = "João Pedro";
+
+cout << "Ola aluno << nomeAluno;
+cout << "Suas notas foram: " << nota1, nota2, nota3;
+cout << "Suas notas foram: " << nota1 << nota2 << nota3;
