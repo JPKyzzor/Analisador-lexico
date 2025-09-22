@@ -1,0 +1,26 @@
+void main{
+    retornoDaFuncao : integer;
+
+    integer somaInteger(integer a; integer b){
+        resultado : integer;
+        inicio
+            resultado = a + b;
+        fim
+        return (resultado)
+    }
+
+    void boasVindas{
+        inicio
+            cout << "Bem vindo!";
+            cout << "Menu: ";
+            cout << "1 - Opção 1";
+            cout << "1 - Opção 2";
+        fim
+        return()
+    }
+
+    inicio
+        callfuncao boasVindas;
+        retornoDaFuncao = callfuncao somaInteger(5,3);
+    fim
+}
