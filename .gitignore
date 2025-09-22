@@ -1,2 +1,3 @@
 node_modules/
 analisador/main/dist
+package-lock.json
