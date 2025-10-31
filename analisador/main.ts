@@ -3,14 +3,14 @@ import * as fs from "fs";
 import * as path from "path";
 import { TokenInfo } from "./lexico/State/StateFactory";
 
-const inputPath = path.join(__dirname, "assets", "input.txt");
-const outputPath = path.join(__dirname, "assets", "output.txt");
-const exemplo1Path = path.join(__dirname, "assets", "exemplo1.txt");
-const exemplo2Path = path.join(__dirname, "assets", "exemplo2.txt");
-const exemplo3Path = path.join(__dirname, "assets", "exemplo3.txt");
-const exemplo1OutputPath = path.join(__dirname, "assets", "exemplo1Output.txt");
-const exemplo2OutputPath = path.join(__dirname, "assets", "exemplo2Output.txt");
-const exemplo3OutputPath = path.join(__dirname, "assets", "exemplo3Output.txt");
+const inputPath = path.join(__dirname, "lexico", "assets", "input.txt");
+const outputPath = path.join(__dirname, "lexico", "assets", "output.txt");
+const exemplo1Path = path.join(__dirname, "lexico", "assets", "exemplo1.txt");
+const exemplo2Path = path.join(__dirname, "lexico", "assets", "exemplo2.txt");
+const exemplo3Path = path.join(__dirname, "lexico", "assets", "exemplo3.txt");
+const exemplo1OutputPath = path.join(__dirname, "lexico", "assets", "exemplo1Output.txt");
+const exemplo2OutputPath = path.join(__dirname, "lexico", "assets", "exemplo2Output.txt");
+const exemplo3OutputPath = path.join(__dirname, "lexico", "assets", "exemplo3Output.txt");
 
 const exemplos = [exemplo1Path, exemplo2Path, exemplo3Path];
 const exemplosOutputs = [
