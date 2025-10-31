@@ -1,7 +1,7 @@
-import { AnalisadorLexico } from "./AnalisadorLexico";
+import { AnalisadorLexico } from "./lexico/AnalisadorLexico";
 import * as fs from "fs";
 import * as path from "path";
-import { TokenInfo } from "./State/StateFactory";
+import { TokenInfo } from "./lexico/State/StateFactory";
 
 const inputPath = path.join(__dirname, "assets", "input.txt");
 const outputPath = path.join(__dirname, "assets", "output.txt");

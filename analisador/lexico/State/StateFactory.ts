@@ -37,7 +37,6 @@ export class StateFactory {
     if (caracter === "*") return new MonoState(TOKEN_CODES.ASTERISCO); //41
     if (caracter === ")") return new MonoState(TOKEN_CODES.FECHA_PARENTESES); //42
     if (caracter === "(") return new MonoState(TOKEN_CODES.ABRE_PARENTESES); //43
-    if (caracter === "$") return new MonoState(TOKEN_CODES.CIFRAO); //44
     if (caracter === "!") return new StateDiferente(); //45
     if (caracter === "-") return new StateMenos(); //46, 47
     return undefined;

@@ -4,7 +4,7 @@
   "description": "Este projeto foi desenvolvido para a disciplina de **Compiladores** no curso de Ciência da Computação da **Unesc**.",
   "main": "index.js",
   "scripts": {
-    "start": "ts-node analisador/main.ts",
+    "start": "ts-node analisador/lexico/main.ts",
     "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
