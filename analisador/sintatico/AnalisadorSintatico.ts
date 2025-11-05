@@ -2,6 +2,7 @@ import { TokenInfo } from "../lexico/State/StateFactory";
 import { Producao, Producao1, PRODUCOES } from "./producoes/producoes";
 import { TabelaParser } from "./producoes/tabela-parser";
 import { TokenMap, TokenMapArray } from "./producoes/tokenMap";
+import { Logger, TipoAnalisadorEnum } from "../logger/logger";
 
 export class AnalisadorSintatico {
   private pilha: number[] = [44];
@@ -36,7 +37,7 @@ export class AnalisadorSintatico {
     }
 
     this.verificarSentencaCompleta();
-    console.log(`✅ Análise sintática concluída com sucesso`);
+    Logger.success(TipoAnalisadorEnum.SINTATICO, "Análise sintática concluída com sucesso");
   }
 
   private aindaHaTokens(): boolean {
