@@ -11,10 +11,10 @@ void main{
 
     void boasVindas{
         inicio
-            cout << "Bem vindo!";
-            cout << "Menu: ";
-            cout << "1 - Opção 1";
-            cout << "1 - Opção 2";
+            cout << `Bem vindo!`;
+            cout << `Menu: `;
+            cout << `1 - Opção `;
+            cout << `1 - Opção 2`;
         fim
         return()
     }
@@ -24,3 +24,5 @@ void main{
         retornoDaFuncao = callfuncao somaInteger(5,3);
     fim
 }
+
+

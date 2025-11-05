@@ -38,19 +38,19 @@
 13 inicio linha 13
 21 cout linha 14
 31 << linha 14
-9 "Bem vindo!" linha 14
+11 `Bem vindo!` linha 14
 37 ; linha 14
 21 cout linha 15
 31 << linha 15
-9 "Menu: " linha 15
+11 `Menu: ` linha 15
 37 ; linha 15
 21 cout linha 16
 31 << linha 16
-9 "1 - Opção 1" linha 16
+11 `1 - Opção ` linha 16
 37 ; linha 16
 21 cout linha 17
 31 << linha 17
-9 "1 - Opção 2" linha 17
+11 `1 - Opção 2` linha 17
 37 ; linha 17
 18 fim linha 18
 4 return linha 19
@@ -73,3 +73,5 @@
 37 ; linha 24
 18 fim linha 25
 35 } linha 26
+
+Código passou pelo analisador sintático sem erros.

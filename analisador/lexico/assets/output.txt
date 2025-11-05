@@ -1,1 +1,0 @@
-❌ Erro léxico próximo da linha 3, caracter 9, arquivo: exemplo3.txt

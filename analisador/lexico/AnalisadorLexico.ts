@@ -90,6 +90,6 @@ export class AnalisadorLexico {
   }
 
   private handleValidationSuccess(): void {
-    console.log(`✅ Código do arquivo ${this.fileName} validado com sucesso.`);
+    console.log(`✅ Análise léxica concluída com sucesso`);
   }
 }

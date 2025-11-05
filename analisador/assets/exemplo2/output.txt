@@ -36,3 +36,5 @@
 35 } linha 10
 37 ; linha 10
 18 fim linha 11
+
+Erro sintático: Token inesperado: 'inicio', esperado: 'void'
