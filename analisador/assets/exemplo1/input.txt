@@ -5,6 +5,7 @@ void main{
         resultado : integer;
         inicio
             resultado = a + b;
+            resultado = -1;
         fim
         return (resultado)
     }

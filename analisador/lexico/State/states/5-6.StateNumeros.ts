@@ -8,7 +8,17 @@ export class StateNumero extends BaseState {
     let analisedCharacters = 0;
     let hasDot = false;
 
-    // Primeiro caractere já é um número
+    // Primeiro caractere pode ser um menos
+    if (inputCode[index] === "-") {
+      analisedCharacters++;
+      index++;
+    }
+
+    // Próximo caractere deve ser um número
+    if (!/[0-9]/.test(inputCode[index])) {
+      return this.fail(analisedCharacters);
+    }
+
     analisedCharacters++;
     index++;
 
@@ -29,6 +39,14 @@ export class StateNumero extends BaseState {
         break;
       }
     }
+    
+    const lexema = inputCode.substring(start, start + analisedCharacters);
+    const numValue = hasDot ? parseFloat(lexema) : parseInt(lexema);
+    
+    if (!hasDot && (numValue < -2147483648 || numValue > 2147483647)) {
+      return this.fail(analisedCharacters);
+    }
+    
     const tokenCode = hasDot
       ? TOKEN_CODES.NUMEROFLOAT
       : TOKEN_CODES.NUMEROINTEIRO;

@@ -62,18 +62,18 @@ export class AnalisadorSintatico {
     return TokenMapArray[this.pilha.pop()! - 1];
   }
 
-  private consumirTerminal(topo: TokenMap, lookahead: TokenMap): void {
-    if (lookahead.tokenCode === topo.tokenCode) {
+  private consumirTerminal(topo: TokenMap, lexemaAtual: TokenMap): void {
+    if (lexemaAtual.tokenCode === topo.tokenCode) {
       this.tokenAtual++;
       return;
     }
     throw new Error(
-      `Token inesperado: '${lookahead._symbol}', esperado: '${topo._symbol}'`
+      `Token inesperado: '${lexemaAtual._symbol}', esperado: '${topo._symbol}'`
     );
   }
 
-  private expansaoNaoTerminal(topo: TokenMap, lookahead: TokenMap): void {
-    const producao = this.tabelaParser.EncontrarProducao(topo, lookahead);
+  private expansaoNaoTerminal(topo: TokenMap, lexemaAtual: TokenMap): void {
+    const producao = this.tabelaParser.EncontrarProducao(topo, lexemaAtual);
     this.empilharProducao(producao);
   }
 

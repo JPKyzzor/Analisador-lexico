@@ -26,52 +26,56 @@
 34 + linha 7
 7 b linha 7
 37 ; linha 7
-18 fim linha 8
-4 return linha 9
-43 ( linha 9
-7 resultado linha 9
-42 ) linha 9
-35 } linha 10
-2 void linha 12
-7 boasVindas linha 12
-36 { linha 12
-13 inicio linha 13
-21 cout linha 14
-31 << linha 14
-11 `Bem vindo!` linha 14
-37 ; linha 14
+7 resultado linha 8
+29 = linha 8
+5 -1 linha 8
+37 ; linha 8
+18 fim linha 9
+4 return linha 10
+43 ( linha 10
+7 resultado linha 10
+42 ) linha 10
+35 } linha 11
+2 void linha 13
+7 boasVindas linha 13
+36 { linha 13
+13 inicio linha 14
 21 cout linha 15
 31 << linha 15
-11 `Menu: ` linha 15
+11 `Bem vindo!` linha 15
 37 ; linha 15
 21 cout linha 16
 31 << linha 16
-11 `1 - Opção ` linha 16
+11 `Menu: ` linha 16
 37 ; linha 16
 21 cout linha 17
 31 << linha 17
-11 `1 - Opção 2` linha 17
+11 `1 - Opção ` linha 17
 37 ; linha 17
-18 fim linha 18
-4 return linha 19
-43 ( linha 19
-42 ) linha 19
-35 } linha 20
-13 inicio linha 22
-24 callfuncao linha 23
-7 boasVindas linha 23
-37 ; linha 23
-7 retornoDaFuncao linha 24
-29 = linha 24
+21 cout linha 18
+31 << linha 18
+11 `1 - Opção 2` linha 18
+37 ; linha 18
+18 fim linha 19
+4 return linha 20
+43 ( linha 20
+42 ) linha 20
+35 } linha 21
+13 inicio linha 23
 24 callfuncao linha 24
-7 somaInteger linha 24
-43 ( linha 24
-5 5 linha 24
-40 , linha 24
-5 3 linha 24
-42 ) linha 24
+7 boasVindas linha 24
 37 ; linha 24
-18 fim linha 25
-35 } linha 26
+7 retornoDaFuncao linha 25
+29 = linha 25
+24 callfuncao linha 25
+7 somaInteger linha 25
+43 ( linha 25
+5 5 linha 25
+40 , linha 25
+5 3 linha 25
+42 ) linha 25
+37 ; linha 25
+18 fim linha 26
+35 } linha 27
 
 Código passou pelo analisador sintático sem erros.

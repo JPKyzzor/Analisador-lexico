@@ -83,11 +83,11 @@ export class AnalisadorLexico {
   }
 
   private handleUnknownCharacter(char: string): string {
-    return `❌ Caracter não reconhecido '${char}' na linha ${this.line}, caracter ${this.column}, arquivo: ${this.fileName}`;
+    return `Caracter não reconhecido '${char}' na linha ${this.line}, caracter ${this.column}, arquivo: ${this.fileName}`;
   }
 
   private handleLexicalError(): string {
-    return `❌ Erro léxico próximo da linha ${this.line}, caracter ${this.column}, arquivo: ${this.fileName}`;
+    return `Erro léxico próximo da linha ${this.line}, caracter ${this.column}, arquivo: ${this.fileName}`;
   }
 
   private handleValidationSuccess(): void {
