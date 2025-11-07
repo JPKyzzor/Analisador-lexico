@@ -1,0 +1,38 @@
+void main{
+    retFunc : integer;
+    msgFinal : string;
+    valorA : integer;
+    valorB : integer;
+
+    integer somaInt(integer a; integer b){
+        parcial : integer;
+
+        inicio
+            parcial = a + b;
+            if (parcial > 9) {
+                cout << `Soma maior que nove`;
+            } else {
+                cout << `Soma menor ou igual a nove`;
+            };
+        fim
+        return(parcial)
+    }
+
+    void boasVinda{
+        inicio
+            cout << `Bem vindo!`;
+            cout << `Menu:`;
+            cout << `1 - Opcao 1`;
+            cout << `2 - Opcao 2`;
+        fim
+        return()
+    }
+
+    inicio
+        valorA = 5;
+        valorB = 3;
+        callfuncao boasVinda;
+        retFunc = callfuncao somaInt(valorA, valorB);
+        cout << `Resultado final: ` << retFunc;
+    fim
+}

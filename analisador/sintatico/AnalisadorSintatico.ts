@@ -20,7 +20,7 @@ export class AnalisadorSintatico {
 
     while (this.pilha.length) {
       if (!this.aindaHaTokens()) {
-        throw new Error("Pilha esvaziou antes da sentença ser validada");
+        throw new Error("Código inalcançável identificado");
       }
       const topo = this.getTopoDaPilha();
 
@@ -67,8 +67,9 @@ export class AnalisadorSintatico {
       this.tokenAtual++;
       return;
     }
+    const tokenInfoAtual  = this.inputTokens[this.tokenAtual];
     throw new Error(
-      `Token inesperado: '${lexemaAtual._symbol}', esperado: '${topo._symbol}'`
+      `Token inesperado na linha: ${tokenInfoAtual.line}: '${lexemaAtual._symbol}', esperado: '${topo._symbol}'`
     );
   }
 
