@@ -94,5 +94,28 @@
 29 = linha 32
 5 5 linha 32
 37 ; linha 32
+7 valorB linha 33
+29 = linha 33
+5 3 linha 33
+37 ; linha 33
+24 callfuncao linha 34
+7 boasVinda linha 34
+37 ; linha 34
+7 retFunc linha 35
+29 = linha 35
+24 callfuncao linha 35
+7 somaInt linha 35
+43 ( linha 35
+7 valorA linha 35
+40 , linha 35
+7 valorB linha 35
+42 ) linha 35
+37 ; linha 35
+21 cout linha 36
+31 << linha 36
+11 `Resultado final: ` linha 36
+31 << linha 36
+7 retFunc linha 36
+37 ; linha 36
 
-Erro sintático: Fim inesperado do código na linha 32.
+Erro sintático: Fim inesperado do código na linha 36.

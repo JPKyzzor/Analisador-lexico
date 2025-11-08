@@ -34,5 +34,3 @@ void main{
         callfuncao boasVinda;
         retFunc = callfuncao somaInt(valorA, valorB);
         cout << `Resultado final: ` << retFunc;
-    fim
-}
