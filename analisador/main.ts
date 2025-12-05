@@ -28,7 +28,7 @@ const exemplo3OutputPath = path.join(
   "output.txt"
 );
 
-const exemplos = [exemplo1Path, exemplo2Path, exemplo3Path];
+const exemplos = [exemplo1Path];
 const exemplosOutputs = [
   exemplo1OutputPath,
   exemplo2OutputPath,

@@ -3,6 +3,7 @@ import { Producao, Producao1, PRODUCOES } from "./producoes/producoes";
 import { TabelaParser } from "./producoes/tabela-parser";
 import { TokenMap, TokenMapArray } from "./producoes/tokenMap";
 import { Logger, TipoAnalisadorEnum } from "../logger/logger";
+import { TabelaSimbolo } from "../semantico/TabelaSimbolos";
 
 export class AnalisadorSintatico {
   private pilha: number[] = [44];
@@ -10,9 +11,11 @@ export class AnalisadorSintatico {
   private tokenAtual: number = 0;
   private tabelaParser = new TabelaParser();
   private inputTokens: TokenInfo[];
+  private tabelaSimbolo: TabelaSimbolo
 
   constructor(inputTokens: TokenInfo[]) {
     this.inputTokens = inputTokens;
+    this.tabelaSimbolo = new TabelaSimbolo(inputTokens);
   }
 
   public Execute() {
@@ -28,6 +31,13 @@ export class AnalisadorSintatico {
       if (this.isVazio(topo)) continue;
 
       const lexemaAtual = this.getTokenASerValidado();
+
+      try {
+        this.tabelaSimbolo.acaoSemantica(topo, this.tokenAtual);
+      } catch (error) {
+        Logger.error(TipoAnalisadorEnum.SEMANTICO, error as string)
+        return
+      }
 
       if (topo.isTerminal) {
         this.consumirTerminal(topo, lexemaAtual);

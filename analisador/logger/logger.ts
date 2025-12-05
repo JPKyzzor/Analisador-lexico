@@ -2,6 +2,7 @@ export enum TipoAnalisadorEnum {
   MAIN = "[MAIN]",
   LEXICO = "[Léxico]",
   SINTATICO = "[Sintático]",
+  SEMANTICO = "[Semântico]"
 }
 
 export class Logger {

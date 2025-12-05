@@ -1,7 +1,10 @@
+import { AcoesSemanticasEnum } from "../../shared/enum/AcoesSemanticas.enum";
+
 export type TokenMap = {
   _symbol: string;
   tokenCode: number;
   isTerminal: boolean;
+  isAcaoSemantica?: boolean;
 };
 
 export const TokenMapArray: TokenMap[] = [
@@ -87,4 +90,12 @@ export const TokenMapArray: TokenMap[] = [
   { _symbol: "<REPEXP>", tokenCode: 77, isTerminal: false },
   { _symbol: "<FATOR>", tokenCode: 78, isTerminal: false },
   { _symbol: "<REPTERMO>", tokenCode: 79, isTerminal: false },
+
+  //Semanticos
+  {
+    _symbol: AcoesSemanticasEnum.FIM_DECLARACAO_VARIAVEIS,
+    tokenCode: 0,
+    isTerminal: false,
+    isAcaoSemantica: true,
+  },
 ];

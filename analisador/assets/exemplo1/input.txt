@@ -3,6 +3,7 @@ void main{
 
     integer somaInteger(integer a; integer b){
         resultado : integer;
+        a, b : string;
         inicio
             resultado = a + b;
             resultado = -1;

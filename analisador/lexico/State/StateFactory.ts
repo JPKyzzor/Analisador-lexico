@@ -11,7 +11,7 @@ import { StateMenos } from "./states/46-47.StateMenos";
 import { StateNumero } from "./states/5-6.StateNumeros";
 import { StateNomeDoChar } from "./states/8.StateNomeDoChar";
 import { StateNomeDaString } from "./states/9.StateNomeDaString";
-import { TOKEN_CODES } from "../enum/TokenCodes.enum";
+import { TOKEN_CODES } from "../../shared/enum/TokenCodes.enum";
 
 export interface State {
   process(inputCode: string, index: number): StateResponse;

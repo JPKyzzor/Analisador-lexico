@@ -1,6 +1,6 @@
 import * as fs from "fs";
 import { StateFactory, TokenInfo } from "./State/StateFactory";
-import { TOKEN_CODES } from "./enum/TokenCodes.enum";
+import { TOKEN_CODES } from "../shared/enum/TokenCodes.enum";
 import path from "path";
 import { Logger, TipoAnalisadorEnum } from "../logger/logger";
 

@@ -1,5 +1,5 @@
 import { StateResponse } from "../StateFactory";
-import { TOKEN_CODES } from "../../enum/TokenCodes.enum";
+import { TOKEN_CODES } from "../../../shared/enum/TokenCodes.enum";
 import { BaseState } from "./BaseState";
 import { StateNumero } from "./5-6.StateNumeros";
 

@@ -1,4 +1,4 @@
-import { TOKEN_CODES } from "../../enum/TokenCodes.enum";
+import { TOKEN_CODES } from "../../../shared/enum/TokenCodes.enum";
 import { BaseState } from "./BaseState";
 import { StateResponse } from "../StateFactory";
 
