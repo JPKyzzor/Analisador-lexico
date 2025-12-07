@@ -45,6 +45,10 @@ export const configProjeto: TAnalisadorConfig = {
 for (let i = 0; i < exemplos.length; i++) {
   const inputPath = exemplos[i];
   const outputPath = exemplosOutputs[i];
+
+  // Limpa os logs anteriores
+  Logger.clearLogs();
+
   Logger.info(TipoAnalisadorEnum.MAIN, `Analisando exemplo ${i + 1}`);
 
   try {
@@ -64,10 +68,24 @@ for (let i = 0; i < exemplos.length; i++) {
       Logger.error(TipoAnalisadorEnum.SINTATICO, sintaticoError?.message);
     }
 
+    // Adiciona os logs ao output
+    const logs = Logger.getLogsAsString();
+    if (logs) {
+      output += `\n\n--- Logs da Análise ---\n${logs}`;
+    }
+
     fs.writeFileSync(outputPath, output, "utf8");
   } catch (lexicoError: any) {
     const message = lexicoError?.message ?? JSON.stringify(lexicoError);
-    fs.writeFileSync(exemplosOutputs[i], `Erro léxico: ${message}`, "utf8");
+    let output = `Erro léxico: ${message}`;
+
+    // Adiciona os logs mesmo em caso de erro léxico
+    const logs = Logger.getLogsAsString();
+    if (logs) {
+      output += `\n\n--- Logs da Análise ---\n${logs}`;
+    }
+
+    fs.writeFileSync(exemplosOutputs[i], output, "utf8");
     Logger.error(TipoAnalisadorEnum.LEXICO, message);
   }
   console.log("\n\n");

@@ -40,9 +40,7 @@ export class AnalisadorSintatico {
         this.analisadorSemantico.acaoSemantica(topo, this.tokenAtual);
       } catch (error) {
         Logger.error(TipoAnalisadorEnum.SEMANTICO, error as string);
-        if (configProjeto.quebrarNoSemantico) {
-          throw new Error(error as string);
-        }
+        return;
       }
 
       if (topo.isTerminal) {

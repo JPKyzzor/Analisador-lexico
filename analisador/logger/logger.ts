@@ -6,24 +6,44 @@ export enum TipoAnalisadorEnum {
 }
 
 export class Logger {
+  private static logs: string[] = [];
+
   public static info(
     tipoAnalisador: TipoAnalisadorEnum,
     message: string
   ): void {
-    console.log(`ℹ️  ${tipoAnalisador} ${message}`);
+    const logMessage = `ℹ️  ${tipoAnalisador} ${message}`;
+    console.log(logMessage);
+    this.logs.push(logMessage);
   }
 
   public static success(
     tipoAnalisador: TipoAnalisadorEnum,
     message: string
   ): void {
-    console.log(`✅ ${tipoAnalisador} ${message}`);
+    const logMessage = `✅ ${tipoAnalisador} ${message}`;
+    console.log(logMessage);
+    this.logs.push(logMessage);
   }
 
   public static error(
     tipoAnalisador: TipoAnalisadorEnum,
     message: string
   ): void {
-    console.log(`❌ ${tipoAnalisador} ${message}`);
+    const logMessage = `❌ ${tipoAnalisador} ${message}`;
+    console.log(logMessage);
+    this.logs.push(logMessage);
+  }
+
+  public static getLogs(): string[] {
+    return [...this.logs];
+  }
+
+  public static clearLogs(): void {
+    this.logs = [];
+  }
+
+  public static getLogsAsString(): string {
+    return this.logs.join("\n");
   }
 }
