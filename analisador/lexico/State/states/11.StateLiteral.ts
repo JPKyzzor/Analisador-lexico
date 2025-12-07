@@ -1,6 +1,6 @@
 import { TOKEN_CODES } from "../../../shared/enum/TokenCodes.enum";
 import { BaseState } from "./BaseState";
-import { StateResponse } from "../StateFactory";
+import { StateResponse } from "../../../shared/types/StateResponse";
 
 export class StateLiteral extends BaseState {
   process(inputCode: string, index: number): StateResponse {
@@ -18,7 +18,7 @@ export class StateLiteral extends BaseState {
     if (i >= inputCode.length) {
       return this.fail(i - index);
     }
-    const analisedCharacters = i-index+1;
+    const analisedCharacters = i - index + 1;
     return this.success(
       inputCode,
       TOKEN_CODES.LITERAL,
@@ -27,4 +27,3 @@ export class StateLiteral extends BaseState {
     );
   }
 }
-

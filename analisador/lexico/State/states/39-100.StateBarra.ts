@@ -1,4 +1,4 @@
-import { StateResponse } from "../StateFactory";
+import { StateResponse } from "../../../shared/types/StateResponse";
 import { TOKEN_CODES } from "../../../shared/enum/TokenCodes.enum";
 import { BaseState } from "./BaseState";
 
@@ -27,9 +27,9 @@ export class StateBarra extends BaseState {
       let i = index + 2;
       let linesJumped = 0;
       while (i < inputCode.length - 1) {
-        if(inputCode[i] === "\n"){
+        if (inputCode[i] === "\n") {
           linesJumped++;
-          i++
+          i++;
           continue;
         }
 

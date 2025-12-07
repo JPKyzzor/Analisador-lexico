@@ -1,17 +1,26 @@
 void main{
     retornoDaFuncao : integer;
 
-    integer somaInteger(integer a; integer b){
+    integer somaInteger(integer x; integer y){
+        x, y : integer;
         resultado : integer;
-        a, b : string;
         inicio
-            resultado = a + b;
-            resultado = -1;
+            resultado = x + y;
         fim
         return (resultado)
     }
+        void boasVindas{
+        inicio
+            cout << `Bem vindo!`;
+            cout << `Menu: `;
+            cout << `1 - Opção `;
+            cout << `1 - Opção 2`;
+        fim
+        return()
+    }
 
-    void boasVindas{
+
+        void boasVindas{
         inicio
             cout << `Bem vindo!`;
             cout << `Menu: `;

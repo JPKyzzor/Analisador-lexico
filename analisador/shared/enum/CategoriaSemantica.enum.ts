@@ -1,5 +1,5 @@
-export enum CategoriaSemanticaEnum{
+export enum CategoriaSemanticaEnum {
   Variavel,
   Parametro,
-  Procedure,
+  Funcao,
 }

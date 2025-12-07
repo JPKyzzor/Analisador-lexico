@@ -1,4 +1,4 @@
-import { StateResponse } from "../StateFactory";
+import { StateResponse } from "../../../shared/types/StateResponse";
 import { TOKEN_CODES } from "../../../shared/enum/TokenCodes.enum";
 import { BaseState } from "./BaseState";
 
@@ -39,14 +39,14 @@ export class StateNumero extends BaseState {
         break;
       }
     }
-    
+
     const lexema = inputCode.substring(start, start + analisedCharacters);
     const numValue = hasDot ? parseFloat(lexema) : parseInt(lexema);
-    
+
     if (!hasDot && (numValue < -2147483648 || numValue > 2147483647)) {
       return this.fail(analisedCharacters);
     }
-    
+
     const tokenCode = hasDot
       ? TOKEN_CODES.NUMEROFLOAT
       : TOKEN_CODES.NUMEROINTEIRO;

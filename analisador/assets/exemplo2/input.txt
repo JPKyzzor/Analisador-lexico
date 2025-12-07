@@ -1,11 +1,38 @@
-inicio
-    if (integerA >= 18){
-        if (integerA <= 100){
-            cout << "Você é maior de idade e está vivo :";
+void main{
+    retornoDaFuncao : integer;
+
+    integer somaInteger(integer a; integer b){
+        resultado : integer;
+        a, b : string;
+        inicio
+        // Se A for maior que B, soma A + B, se for menor, subtrai de B
+        if(a>b){
+            resultado = a + b;
         }else{
-            cout << "Você provavelmente é bem velho ou mentiroso.";
+            resultado = a - b;
         };
-    }else{
-        cout << "Você é menor de idade";
-    };
-fim
+        fim
+        return (resultado)
+    }
+
+    void boasVindas{
+        /-
+            Menu de boas vindas
+        -/
+        inicio
+            cout << `Bem vindo!`;
+            cout << `Menu: `;
+            cout << `1 - Opção `;
+            cout << `1 - Opção 2`;
+            variavelInexistente = retornoDaFuncao;
+        fim
+        return()
+    }
+
+    inicio
+        callfuncao boasVindas;
+        retornoDaFuncao = callfuncao somaInteger(5,3);
+    fim
+}
+
+

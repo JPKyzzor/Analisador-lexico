@@ -32,31 +32,29 @@
 12 integer linha 8
 37 ; linha 8
 13 inicio linha 10
+22 cin linha 11
+25 >> linha 11
 7 parcial linha 11
-29 = linha 11
-7 a linha 11
-34 + linha 11
-7 b linha 11
 37 ; linha 11
-14 if linha 12
-43 ( linha 12
-7 parcial linha 12
-27 > linha 12
-5 9 linha 12
-42 ) linha 12
+20 do linha 12
 36 { linha 12
-21 cout linha 13
-31 << linha 13
-11 `Soma maior que nove` linha 13
+7 parcial linha 13
+29 = linha 13
+7 parcial linha 13
+34 + linha 13
+6 1.2 linha 13
 37 ; linha 13
 35 } linha 14
-19 else linha 14
-36 { linha 14
-21 cout linha 15
-31 << linha 15
-11 `Soma menor ou igual a nove` linha 15
-37 ; linha 15
-35 } linha 16
+1 while linha 14
+43 ( linha 14
+7 parcial linha 14
+32 < linha 14
+5 5 linha 14
+42 ) linha 14
+37 ; linha 14
+21 cout linha 16
+31 << linha 16
+11 `Soma é maior que 5` linha 16
 37 ; linha 16
 18 fim linha 17
 4 return linha 18
@@ -117,5 +115,7 @@
 31 << linha 36
 7 retFunc linha 36
 37 ; linha 36
+18 fim linha 37
+35 } linha 38
 
-Erro sintático: Fim inesperado do código na linha 36.
+Erro sintático: Error: Soma de tipos inválidos:  integer não pode ser somado ou concatenado com float, linha 13 

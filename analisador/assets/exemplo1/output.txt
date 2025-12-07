@@ -9,79 +9,100 @@
 7 somaInteger linha 4
 43 ( linha 4
 12 integer linha 4
-7 a linha 4
+7 x linha 4
 37 ; linha 4
 12 integer linha 4
-7 b linha 4
+7 y linha 4
 42 ) linha 4
 36 { linha 4
-7 resultado linha 5
+7 x linha 5
+40 , linha 5
+7 y linha 5
 38 : linha 5
 12 integer linha 5
 37 ; linha 5
-7 a linha 6
-40 , linha 6
-7 b linha 6
+7 resultado linha 6
 38 : linha 6
-3 string linha 6
+12 integer linha 6
 37 ; linha 6
 13 inicio linha 7
 7 resultado linha 8
 29 = linha 8
-7 a linha 8
+7 x linha 8
 34 + linha 8
-7 b linha 8
+7 y linha 8
 37 ; linha 8
-7 resultado linha 9
-29 = linha 9
-5 -1 linha 9
-37 ; linha 9
-18 fim linha 10
-4 return linha 11
-43 ( linha 11
-7 resultado linha 11
-42 ) linha 11
-35 } linha 12
-2 void linha 14
-7 boasVindas linha 14
-36 { linha 14
-13 inicio linha 15
+18 fim linha 9
+4 return linha 10
+43 ( linha 10
+7 resultado linha 10
+42 ) linha 10
+35 } linha 11
+2 void linha 12
+7 boasVindas linha 12
+36 { linha 12
+13 inicio linha 13
+21 cout linha 14
+31 << linha 14
+11 `Bem vindo!` linha 14
+37 ; linha 14
+21 cout linha 15
+31 << linha 15
+11 `Menu: ` linha 15
+37 ; linha 15
 21 cout linha 16
 31 << linha 16
-11 `Bem vindo!` linha 16
+11 `1 - Opção ` linha 16
 37 ; linha 16
 21 cout linha 17
 31 << linha 17
-11 `Menu: ` linha 17
+11 `1 - Opção 2` linha 17
 37 ; linha 17
-21 cout linha 18
-31 << linha 18
-11 `1 - Opção ` linha 18
-37 ; linha 18
-21 cout linha 19
-31 << linha 19
-11 `1 - Opção 2` linha 19
-37 ; linha 19
-18 fim linha 20
-4 return linha 21
-43 ( linha 21
-42 ) linha 21
-35 } linha 22
+18 fim linha 18
+4 return linha 19
+43 ( linha 19
+42 ) linha 19
+35 } linha 20
+2 void linha 23
+7 boasVindas linha 23
+36 { linha 23
 13 inicio linha 24
-24 callfuncao linha 25
-7 boasVindas linha 25
+21 cout linha 25
+31 << linha 25
+11 `Bem vindo!` linha 25
 37 ; linha 25
-7 retornoDaFuncao linha 26
-29 = linha 26
-24 callfuncao linha 26
-7 somaInteger linha 26
-43 ( linha 26
-5 5 linha 26
-40 , linha 26
-5 3 linha 26
-42 ) linha 26
+21 cout linha 26
+31 << linha 26
+11 `Menu: ` linha 26
 37 ; linha 26
-18 fim linha 27
-35 } linha 28
+21 cout linha 27
+31 << linha 27
+11 `1 - Opção ` linha 27
+37 ; linha 27
+21 cout linha 28
+31 << linha 28
+11 `1 - Opção 2` linha 28
+37 ; linha 28
+18 fim linha 29
+4 return linha 30
+43 ( linha 30
+42 ) linha 30
+35 } linha 31
+13 inicio linha 33
+24 callfuncao linha 34
+7 boasVindas linha 34
+37 ; linha 34
+7 retornoDaFuncao linha 35
+29 = linha 35
+24 callfuncao linha 35
+7 somaInteger linha 35
+43 ( linha 35
+5 5 linha 35
+40 , linha 35
+5 3 linha 35
+42 ) linha 35
+37 ; linha 35
+18 fim linha 36
+35 } linha 37
 
-Código passou pelo analisador sintático sem erros.
+Erro sintático: Error: Identificador em uso "boasVindas", linha: 23
