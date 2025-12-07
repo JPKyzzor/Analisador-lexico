@@ -1,5 +1,5 @@
-import { StateResponse } from "../StateFactory";
-import { TOKEN_CODES } from "../../enum/TokenCodes.enum";
+import { StateResponse } from "../../../shared/types/StateResponse";
+import { TOKEN_CODES } from "../../../shared/enum/TokenCodes.enum";
 import { BaseState } from "./BaseState";
 export class StateNomeDoChar extends BaseState {
   process(inputCode: string, start: number): StateResponse {
@@ -9,6 +9,6 @@ export class StateNomeDoChar extends BaseState {
     if (inputCode[start + 2] === "'") {
       return this.success(inputCode, TOKEN_CODES.NOMEDOCHAR, start, 3);
     }
-    return this.fail(3)
+    return this.fail(3);
   }
 }

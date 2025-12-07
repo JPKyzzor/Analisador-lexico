@@ -1,8 +1,10 @@
-import { TokenInfo } from "../lexico/State/StateFactory";
+import { TokenInfo } from "../shared/types/TokenInfo";
 import { Producao, Producao1, PRODUCOES } from "./producoes/producoes";
 import { TabelaParser } from "./producoes/tabela-parser";
 import { TokenMap, TokenMapArray } from "./producoes/tokenMap";
 import { Logger, TipoAnalisadorEnum } from "../logger/logger";
+import { AnalisadorSemantico } from "../semantico/AnalisadorSemantico";
+import { configProjeto } from "../main";
 
 export class AnalisadorSintatico {
   private pilha: number[] = [44];
@@ -10,9 +12,11 @@ export class AnalisadorSintatico {
   private tokenAtual: number = 0;
   private tabelaParser = new TabelaParser();
   private inputTokens: TokenInfo[];
+  private analisadorSemantico: AnalisadorSemantico;
 
   constructor(inputTokens: TokenInfo[]) {
     this.inputTokens = inputTokens;
+    this.analisadorSemantico = new AnalisadorSemantico(inputTokens);
   }
 
   public Execute() {
@@ -22,12 +26,22 @@ export class AnalisadorSintatico {
       if (!this.aindaHaTokens()) {
         throw new Error("Código inalcançável identificado");
       }
+      if (configProjeto.mostrarPilhaSintatico) {
+        Logger.info(TipoAnalisadorEnum.SINTATICO, this.pilha.join("-"));
+      }
       const topo = this.getTopoDaPilha();
 
       if (this.isFinal(topo)) break;
       if (this.isVazio(topo)) continue;
 
       const lexemaAtual = this.getTokenASerValidado();
+
+      try {
+        this.analisadorSemantico.acaoSemantica(topo, this.tokenAtual);
+      } catch (error) {
+        Logger.error(TipoAnalisadorEnum.SEMANTICO, error as string);
+        return;
+      }
 
       if (topo.isTerminal) {
         this.consumirTerminal(topo, lexemaAtual);
@@ -37,7 +51,14 @@ export class AnalisadorSintatico {
     }
 
     this.verificarSentencaCompleta();
-    Logger.success(TipoAnalisadorEnum.SINTATICO, "Análise sintática concluída com sucesso");
+    Logger.success(
+      TipoAnalisadorEnum.SINTATICO,
+      "Análise sintática concluída com sucesso"
+    );
+    Logger.success(
+      TipoAnalisadorEnum.SEMANTICO,
+      "Análise semântica concluída com sucesso"
+    );
   }
 
   private aindaHaTokens(): boolean {
@@ -67,7 +88,7 @@ export class AnalisadorSintatico {
       this.tokenAtual++;
       return;
     }
-    const tokenInfoAtual  = this.inputTokens[this.tokenAtual];
+    const tokenInfoAtual = this.inputTokens[this.tokenAtual];
     throw new Error(
       `Token inesperado na linha: ${tokenInfoAtual.line}: '${lexemaAtual._symbol}', esperado: '${topo._symbol}'`
     );

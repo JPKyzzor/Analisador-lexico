@@ -1,0 +1,3 @@
+export enum AcoesSemanticasEnum{
+  FIM_DECLARACAO_VARIAVEIS = "FIM_DECLARACAO_VARIAVEIS"
+}

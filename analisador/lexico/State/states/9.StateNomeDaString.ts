@@ -1,6 +1,6 @@
-import { TOKEN_CODES } from "../../enum/TokenCodes.enum";
+import { TOKEN_CODES } from "../../../shared/enum/TokenCodes.enum";
 import { BaseState } from "./BaseState";
-import { StateResponse } from "../StateFactory";
+import { StateResponse } from "../../../shared/types/StateResponse";
 
 export class StateNomeDaString extends BaseState {
   process(inputCode: string, index: number): StateResponse {
@@ -23,8 +23,7 @@ export class StateNomeDaString extends BaseState {
       inputCode,
       TOKEN_CODES.NOMEDASTRING,
       start,
-      analisedCharacters,
+      analisedCharacters
     );
   }
 }
-

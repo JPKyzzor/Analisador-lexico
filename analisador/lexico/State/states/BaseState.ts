@@ -1,4 +1,6 @@
-import { State, StateResponse, TokenInfo } from "../StateFactory";
+import { StateResponse } from "../../../shared/types/StateResponse";
+import { TokenInfo } from "../../../shared/types/TokenInfo";
+import { State } from "../StateFactory";
 
 export abstract class BaseState implements State {
   protected success(
@@ -24,7 +26,7 @@ export abstract class BaseState implements State {
     return {
       success: false,
       analisedCharacters,
-      analisedLines
+      analisedLines,
     };
   }
 

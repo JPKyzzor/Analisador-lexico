@@ -11,7 +11,8 @@ import { StateMenos } from "./states/46-47.StateMenos";
 import { StateNumero } from "./states/5-6.StateNumeros";
 import { StateNomeDoChar } from "./states/8.StateNomeDoChar";
 import { StateNomeDaString } from "./states/9.StateNomeDaString";
-import { TOKEN_CODES } from "../enum/TokenCodes.enum";
+import { TOKEN_CODES } from "../../shared/enum/TokenCodes.enum";
+import { StateResponse } from "../../shared/types/StateResponse";
 
 export interface State {
   process(inputCode: string, index: number): StateResponse;
@@ -42,23 +43,3 @@ export class StateFactory {
     return undefined;
   }
 }
-
-export type StateResponse =
-  | {
-      success: true;
-      analisedCharacters: number;
-      analisedLines: number;
-      tokenInfo: TokenInfo;
-    }
-  | {
-      success: false;
-      analisedCharacters: number;
-      analisedLines: number;
-      tokenInfo?: never;
-    };
-
-export type TokenInfo = {
-  code: number;
-  value: string;
-  line?: number;
-};

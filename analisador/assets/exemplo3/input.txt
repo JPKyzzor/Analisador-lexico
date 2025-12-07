@@ -8,12 +8,12 @@ void main{
         parcial : integer;
 
         inicio
-            parcial = a + b;
-            if (parcial > 9) {
-                cout << `Soma maior que nove`;
-            } else {
-                cout << `Soma menor ou igual a nove`;
-            };
+        cin >> parcial;
+        do{
+            parcial = parcial + 1.2;
+        } while(parcial < 5);
+
+        cout << `Soma é maior que 5`;
         fim
         return(parcial)
     }
@@ -34,3 +34,5 @@ void main{
         callfuncao boasVinda;
         retFunc = callfuncao somaInt(valorA, valorB);
         cout << `Resultado final: ` << retFunc;
+    fim
+}

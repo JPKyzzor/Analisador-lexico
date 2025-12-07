@@ -9,26 +9,28 @@
 7 somaInteger linha 4
 43 ( linha 4
 12 integer linha 4
-7 a linha 4
+7 x linha 4
 37 ; linha 4
 12 integer linha 4
-7 b linha 4
+7 y linha 4
 42 ) linha 4
 36 { linha 4
-7 resultado linha 5
+7 x linha 5
+40 , linha 5
+7 y linha 5
 38 : linha 5
 12 integer linha 5
 37 ; linha 5
-13 inicio linha 6
-7 resultado linha 7
-29 = linha 7
-7 a linha 7
-34 + linha 7
-7 b linha 7
-37 ; linha 7
+7 resultado linha 6
+38 : linha 6
+12 integer linha 6
+37 ; linha 6
+13 inicio linha 7
 7 resultado linha 8
 29 = linha 8
-5 -1 linha 8
+7 x linha 8
+34 + linha 8
+7 y linha 8
 37 ; linha 8
 18 fim linha 9
 4 return linha 10
@@ -36,46 +38,232 @@
 7 resultado linha 10
 42 ) linha 10
 35 } linha 11
-2 void linha 13
-7 boasVindas linha 13
-36 { linha 13
-13 inicio linha 14
+2 void linha 12
+7 boasVindas linha 12
+36 { linha 12
+13 inicio linha 13
+21 cout linha 14
+31 << linha 14
+11 `Bem vindo!` linha 14
+37 ; linha 14
 21 cout linha 15
 31 << linha 15
-11 `Bem vindo!` linha 15
+11 `Menu: ` linha 15
 37 ; linha 15
 21 cout linha 16
 31 << linha 16
-11 `Menu: ` linha 16
+11 `1 - Opção ` linha 16
 37 ; linha 16
 21 cout linha 17
 31 << linha 17
-11 `1 - Opção ` linha 17
+11 `1 - Opção 2` linha 17
 37 ; linha 17
-21 cout linha 18
-31 << linha 18
-11 `1 - Opção 2` linha 18
-37 ; linha 18
-18 fim linha 19
-4 return linha 20
-43 ( linha 20
-42 ) linha 20
-35 } linha 21
-13 inicio linha 23
-24 callfuncao linha 24
-7 boasVindas linha 24
-37 ; linha 24
-7 retornoDaFuncao linha 25
-29 = linha 25
-24 callfuncao linha 25
-7 somaInteger linha 25
-43 ( linha 25
-5 5 linha 25
-40 , linha 25
-5 3 linha 25
-42 ) linha 25
+18 fim linha 18
+4 return linha 19
+43 ( linha 19
+42 ) linha 19
+35 } linha 20
+2 void linha 23
+7 boasVindas linha 23
+36 { linha 23
+13 inicio linha 24
+21 cout linha 25
+31 << linha 25
+11 `Bem vindo!` linha 25
 37 ; linha 25
-18 fim linha 26
-35 } linha 27
+21 cout linha 26
+31 << linha 26
+11 `Menu: ` linha 26
+37 ; linha 26
+21 cout linha 27
+31 << linha 27
+11 `1 - Opção ` linha 27
+37 ; linha 27
+21 cout linha 28
+31 << linha 28
+11 `1 - Opção 2` linha 28
+37 ; linha 28
+18 fim linha 29
+4 return linha 30
+43 ( linha 30
+42 ) linha 30
+35 } linha 31
+13 inicio linha 33
+24 callfuncao linha 34
+7 boasVindas linha 34
+37 ; linha 34
+7 retornoDaFuncao linha 35
+29 = linha 35
+24 callfuncao linha 35
+7 somaInteger linha 35
+43 ( linha 35
+5 5 linha 35
+40 , linha 35
+5 3 linha 35
+42 ) linha 35
+37 ; linha 35
+18 fim linha 36
+35 } linha 37
 
 Código passou pelo analisador sintático sem erros.
+
+Código passou pelo analisador semântico sem erros.
+
+--- Logs da Análise ---
+ℹ️  [MAIN] Analisando exemplo 1
+✅ [Léxico] Análise léxica concluída com sucesso
+ℹ️  [Sintático] 44-35-51-50-49-36-10-2
+ℹ️  [Sintático] 44-35-51-50-49-36-10
+ℹ️  [Sintático] 44-35-51-50-49-36
+ℹ️  [Semântico] Nível da lista de símbolos aumentado, nivel atual: 1
+ℹ️  [Sintático] 44-35-51-50-49
+ℹ️  [Semântico] Simbolo: "retornoDaFuncao", nivel: 1, adicionado na lista de símbolos
+ℹ️  [Sintático] 44-35-51-50-54-37-53-38-52-7
+ℹ️  [Sintático] 44-35-51-50-54-37-53-38-52
+ℹ️  [Sintático] 44-35-51-50-54-37-53-38-15
+ℹ️  [Sintático] 44-35-51-50-54-37-53-38
+ℹ️  [Sintático] 44-35-51-50-54-37-53
+ℹ️  [Sintático] 44-35-51-50-54-37-12
+ℹ️  [Sintático] 44-35-51-50-54-37
+ℹ️  [Sintático] 44-35-51-50-54
+ℹ️  [Sintático] 44-35-51-50-15
+ℹ️  [Sintático] 44-35-51-50
+ℹ️  [Semântico] Simbolo: "somaInteger", nivel: 1, adicionado na lista de símbolos
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-51-50-49-36-58-7-57
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-51-50-49-36-58-7-12
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-51-50-49-36-58-7
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-51-50-49-36-58
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-51-50-49-36-42-60-43
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-51-50-49-36-42-60
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-51-50-49-36-42-61-7-53
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-51-50-49-36-42-61-7-12
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-51-50-49-36-42-61-7
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-51-50-49-36-42-61
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-51-50-49-36-42-61-7-53-37
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-51-50-49-36-42-61-7-53
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-51-50-49-36-42-61-7-12
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-51-50-49-36-42-61-7
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-51-50-49-36-42-61
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-51-50-49-36-42-15
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-51-50-49-36-42
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-51-50-49-36
+ℹ️  [Semântico] Nível da lista de símbolos aumentado, nivel atual: 2
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-51-50-49
+ℹ️  [Semântico] Simbolo: "x", nivel: 2, adicionado na lista de símbolos
+ℹ️  [Semântico] Simbolo: "y", nivel: 2, adicionado na lista de símbolos
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-51-50-54-37-53-38-52-7
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-51-50-54-37-53-38-52
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-51-50-54-37-53-38-52-7-40
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-51-50-54-37-53-38-52-7
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-51-50-54-37-53-38-52
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-51-50-54-37-53-38-15
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-51-50-54-37-53-38
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-51-50-54-37-53
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-51-50-54-37-12
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-51-50-54-37
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-51-50-54
+ℹ️  [Semântico] Simbolo: "resultado", nivel: 2, adicionado na lista de símbolos
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-51-50-54-37-53-38-56
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-51-50-54-37-53-38-52-7
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-51-50-54-37-53-38-52
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-51-50-54-37-53-38-15
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-51-50-54-37-53-38
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-51-50-54-37-53
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-51-50-54-37-12
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-51-50-54-37
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-51-50-54
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-51-50-15
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-51-50
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-51-15
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-51
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-18-63-37-62-13
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-18-63-37-62
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-18-63-37-64-29-7
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-18-63-37-64-29
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-18-63-37-64
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-18-63-37-77-76
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-18-63-37-77-79-78
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-18-63-37-77-79-7
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-18-63-37-77-79
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-18-63-37-77-15
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-18-63-37-77
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-18-63-37-77-76-34
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-18-63-37-77-76
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-18-63-37-77-79-78
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-18-63-37-77-79-7
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-18-63-37-77-79
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-18-63-37-77-15
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-18-63-37-77
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-18-63-37-15
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-18-63-37
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-18-63
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-18-15
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-18
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43
+ℹ️  [Sintático] 44-35-51-50-35-42-59
+ℹ️  [Sintático] 44-35-51-50-35-42-7
+ℹ️  [Sintático] 44-35-51-50-35-42
+ℹ️  [Sintático] 44-35-51-50-35
+ℹ️  [Semântico] Simbolo: "x", nível: 2, removido da lista de símbolos
+ℹ️  [Semântico] Simbolo: "y", nível: 2, removido da lista de símbolos
+ℹ️  [Semântico] Simbolo: "resultado", nível: 2, removido da lista de símbolos
+ℹ️  [Semântico] Nível da lista de símbolos diminuido, nivel atual: 1
+ℹ️  [Sintático] 44-35-51-50
+ℹ️  [Semântico] Simbolo: "boasVindas", nivel: 1, adicionado na lista de símbolos
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-51-50-49-36-58-7-57
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-51-50-49-36-58-7-2
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-51-50-49-36-58-7
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-51-50-49-36-58
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-51-50-49-36-15
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-51-50-49-36
+ℹ️  [Semântico] Nível da lista de símbolos aumentado, nivel atual: 2
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-51-50-49
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-51-50-15
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-51-50
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-51-15
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-51
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-18-63-37-62-13
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-18-63-37-62
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-18-63-37-72-11-31-21
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-18-63-37-72-11-31
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-18-63-37-72-11
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-18-63-37-72
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-18-63-37-15
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-18-63-37
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-18-63
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-18-63-37-62
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-18-63-37-72-11-31-21
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-18-63-37-72-11-31
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-18-63-37-72-11
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-18-63-37-72
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-18-63-37-15
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-18-63-37
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-18-63
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-18-63-37-62
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-18-63-37-72-11-31-21
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-18-63-37-72-11-31
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-18-63-37-72-11
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-18-63-37-72
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-18-63-37-15
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-18-63-37
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-18-63
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-18-63-37-62
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-18-63-37-72-11-31-21
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-18-63-37-72-11-31
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-18-63-37-72-11
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-18-63-37-72
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-18-63-37-15
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-18-63-37
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-18-63
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-18-15
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-18
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43
+ℹ️  [Sintático] 44-35-51-50-35-42-59
+ℹ️  [Sintático] 44-35-51-50-35-42-15
+ℹ️  [Sintático] 44-35-51-50-35-42
+ℹ️  [Sintático] 44-35-51-50-35
+ℹ️  [Semântico] Nível da lista de símbolos diminuido, nivel atual: 1
+ℹ️  [Sintático] 44-35-51-50
+❌ [Semântico] Error: Identificador em uso "boasVindas", linha: 23

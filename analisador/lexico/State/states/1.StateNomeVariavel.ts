@@ -1,5 +1,5 @@
-import { StateResponse } from "../StateFactory";
-import { TOKEN_CODES } from "../../enum/TokenCodes.enum";
+import { TOKEN_CODES } from "../../../shared/enum/TokenCodes.enum";
+import { StateResponse } from "../../../shared/types/StateResponse";
 import { BaseState } from "./BaseState";
 
 export class StateNomeVariavel extends BaseState {

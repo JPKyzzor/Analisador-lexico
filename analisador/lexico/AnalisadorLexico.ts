@@ -1,8 +1,9 @@
 import * as fs from "fs";
-import { StateFactory, TokenInfo } from "./State/StateFactory";
-import { TOKEN_CODES } from "./enum/TokenCodes.enum";
+import { StateFactory } from "./State/StateFactory";
+import { TOKEN_CODES } from "../shared/enum/TokenCodes.enum";
 import path from "path";
 import { Logger, TipoAnalisadorEnum } from "../logger/logger";
+import { TokenInfo } from "../shared/types/TokenInfo";
 
 export class AnalisadorLexico {
   private inputCode: string;
@@ -91,6 +92,9 @@ export class AnalisadorLexico {
   }
 
   private handleValidationSuccess(): void {
-    Logger.success(TipoAnalisadorEnum.LEXICO, "Análise léxica concluída com sucesso");
+    Logger.success(
+      TipoAnalisadorEnum.LEXICO,
+      "Análise léxica concluída com sucesso"
+    );
   }
 }

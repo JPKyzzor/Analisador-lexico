@@ -1,9 +1,10 @@
 import { AnalisadorLexico } from "./lexico/AnalisadorLexico";
 import * as fs from "fs";
 import * as path from "path";
-import { TokenInfo } from "./lexico/State/StateFactory";
 import { AnalisadorSintatico } from "./sintatico/AnalisadorSintatico";
 import { Logger, TipoAnalisadorEnum } from "./logger/logger";
+import { TAnalisadorConfig } from "./shared/types/AnalisadorConfig";
+import { TokenInfo } from "./shared/types/TokenInfo";
 
 const exemplo1Path = path.join(__dirname, "assets", "exemplo1", "input.txt");
 const exemplo2Path = path.join(__dirname, "assets", "exemplo2", "input.txt");
@@ -35,10 +36,20 @@ const exemplosOutputs = [
   exemplo3OutputPath,
 ];
 
+export const configProjeto: TAnalisadorConfig = {
+  mostrarPilhaSintatico: true, //indica se a pilha do sintático deve ser mostrada a cada iteração
+  mostrarTabelaSimbolos: true, //indica se a tabela de símbolos deve informar sempre que um simbolo for adicionado ou removido
+  quebrarNoSemantico: true, //indica se a execução do exemplo deve parar ao encontrar um erro semântico
+};
+
 for (let i = 0; i < exemplos.length; i++) {
   const inputPath = exemplos[i];
   const outputPath = exemplosOutputs[i];
-  Logger.info(TipoAnalisadorEnum.MAIN, `Analisando exemplo ${i+1}`);
+
+  // Limpa os logs anteriores
+  Logger.clearLogs();
+
+  Logger.info(TipoAnalisadorEnum.MAIN, `Analisando exemplo ${i + 1}`);
 
   try {
     const analisadorLexico = new AnalisadorLexico(inputPath);
@@ -49,6 +60,7 @@ for (let i = 0; i < exemplos.length; i++) {
       const analisadorSintatico = new AnalisadorSintatico(tokens);
       analisadorSintatico.Execute();
       output += `\n\nCódigo passou pelo analisador sintático sem erros.`;
+      output += `\n\nCódigo passou pelo analisador semântico sem erros.`;
     } catch (sintaticoError: any) {
       output += `\n\nErro sintático: ${
         sintaticoError?.message ?? sintaticoError
@@ -56,13 +68,27 @@ for (let i = 0; i < exemplos.length; i++) {
       Logger.error(TipoAnalisadorEnum.SINTATICO, sintaticoError?.message);
     }
 
+    // Adiciona os logs ao output
+    const logs = Logger.getLogsAsString();
+    if (logs) {
+      output += `\n\n--- Logs da Análise ---\n${logs}`;
+    }
+
     fs.writeFileSync(outputPath, output, "utf8");
   } catch (lexicoError: any) {
     const message = lexicoError?.message ?? JSON.stringify(lexicoError);
-    fs.writeFileSync(exemplosOutputs[i], `Erro léxico: ${message}`, "utf8");
+    let output = `Erro léxico: ${message}`;
+
+    // Adiciona os logs mesmo em caso de erro léxico
+    const logs = Logger.getLogsAsString();
+    if (logs) {
+      output += `\n\n--- Logs da Análise ---\n${logs}`;
+    }
+
+    fs.writeFileSync(exemplosOutputs[i], output, "utf8");
     Logger.error(TipoAnalisadorEnum.LEXICO, message);
   }
-    console.log("\n\n")
+  console.log("\n\n");
 }
 
 function mountOutputString(tokens: TokenInfo[]): string {
