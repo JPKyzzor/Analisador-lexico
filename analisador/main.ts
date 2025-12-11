@@ -38,8 +38,8 @@ const exemplosOutputs = [
 
 export const configProjeto: TAnalisadorConfig = {
   mostrarPilhaSintatico: true, //indica se a pilha do sintático deve ser mostrada a cada iteração
-  mostrarTabelaSimbolos: true, //indica se a tabela de símbolos deve informar sempre que um simbolo for adicionado ou removido
-  quebrarNoSemantico: true, //indica se a execução do exemplo deve parar ao encontrar um erro semântico
+  mostrarTabelaSimbolos: false, //indica se a tabela de símbolos deve informar sempre que um simbolo for adicionado ou removido
+  quebrarNoSemantico: false, //indica se a execução do exemplo deve parar ao encontrar um erro semântico
 };
 
 for (let i = 0; i < exemplos.length; i++) {

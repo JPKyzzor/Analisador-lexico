@@ -115,9 +115,7 @@ Código passou pelo analisador semântico sem erros.
 ℹ️  [Sintático] 44-35-51-50-49-36-10-2
 ℹ️  [Sintático] 44-35-51-50-49-36-10
 ℹ️  [Sintático] 44-35-51-50-49-36
-ℹ️  [Semântico] Nível da lista de símbolos aumentado, nivel atual: 1
 ℹ️  [Sintático] 44-35-51-50-49
-ℹ️  [Semântico] Simbolo: "retornoDaFuncao", nivel: 1, adicionado na lista de símbolos
 ℹ️  [Sintático] 44-35-51-50-54-37-53-38-52-7
 ℹ️  [Sintático] 44-35-51-50-54-37-53-38-52
 ℹ️  [Sintático] 44-35-51-50-54-37-53-38-15
@@ -128,7 +126,6 @@ Código passou pelo analisador semântico sem erros.
 ℹ️  [Sintático] 44-35-51-50-54
 ℹ️  [Sintático] 44-35-51-50-15
 ℹ️  [Sintático] 44-35-51-50
-ℹ️  [Semântico] Simbolo: "somaInteger", nivel: 1, adicionado na lista de símbolos
 ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-51-50-49-36-58-7-57
 ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-51-50-49-36-58-7-12
 ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-51-50-49-36-58-7
@@ -147,10 +144,7 @@ Código passou pelo analisador semântico sem erros.
 ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-51-50-49-36-42-15
 ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-51-50-49-36-42
 ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-51-50-49-36
-ℹ️  [Semântico] Nível da lista de símbolos aumentado, nivel atual: 2
 ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-51-50-49
-ℹ️  [Semântico] Simbolo: "x", nivel: 2, adicionado na lista de símbolos
-ℹ️  [Semântico] Simbolo: "y", nivel: 2, adicionado na lista de símbolos
 ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-51-50-54-37-53-38-52-7
 ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-51-50-54-37-53-38-52
 ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-51-50-54-37-53-38-52-7-40
@@ -162,7 +156,6 @@ Código passou pelo analisador semântico sem erros.
 ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-51-50-54-37-12
 ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-51-50-54-37
 ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-51-50-54
-ℹ️  [Semântico] Simbolo: "resultado", nivel: 2, adicionado na lista de símbolos
 ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-51-50-54-37-53-38-56
 ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-51-50-54-37-53-38-52-7
 ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-51-50-54-37-53-38-52
@@ -205,19 +198,13 @@ Código passou pelo analisador semântico sem erros.
 ℹ️  [Sintático] 44-35-51-50-35-42-7
 ℹ️  [Sintático] 44-35-51-50-35-42
 ℹ️  [Sintático] 44-35-51-50-35
-ℹ️  [Semântico] Simbolo: "x", nível: 2, removido da lista de símbolos
-ℹ️  [Semântico] Simbolo: "y", nível: 2, removido da lista de símbolos
-ℹ️  [Semântico] Simbolo: "resultado", nível: 2, removido da lista de símbolos
-ℹ️  [Semântico] Nível da lista de símbolos diminuido, nivel atual: 1
 ℹ️  [Sintático] 44-35-51-50
-ℹ️  [Semântico] Simbolo: "boasVindas", nivel: 1, adicionado na lista de símbolos
 ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-51-50-49-36-58-7-57
 ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-51-50-49-36-58-7-2
 ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-51-50-49-36-58-7
 ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-51-50-49-36-58
 ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-51-50-49-36-15
 ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-51-50-49-36
-ℹ️  [Semântico] Nível da lista de símbolos aumentado, nivel atual: 2
 ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-51-50-49
 ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-51-50-15
 ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-51-50
@@ -264,6 +251,93 @@ Código passou pelo analisador semântico sem erros.
 ℹ️  [Sintático] 44-35-51-50-35-42-15
 ℹ️  [Sintático] 44-35-51-50-35-42
 ℹ️  [Sintático] 44-35-51-50-35
-ℹ️  [Semântico] Nível da lista de símbolos diminuido, nivel atual: 1
 ℹ️  [Sintático] 44-35-51-50
 ❌ [Semântico] Error: Identificador em uso "boasVindas", linha: 23
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-51-50-49-36-58-7-57
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-51-50-49-36-58-7-2
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-51-50-49-36-58-7
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-51-50-49-36-58
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-51-50-49-36-15
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-51-50-49-36
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-51-50-49
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-51-50-15
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-51-50
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-51-15
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-51
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-18-63-37-62-13
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-18-63-37-62
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-18-63-37-72-11-31-21
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-18-63-37-72-11-31
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-18-63-37-72-11
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-18-63-37-72
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-18-63-37-15
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-18-63-37
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-18-63
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-18-63-37-62
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-18-63-37-72-11-31-21
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-18-63-37-72-11-31
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-18-63-37-72-11
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-18-63-37-72
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-18-63-37-15
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-18-63-37
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-18-63
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-18-63-37-62
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-18-63-37-72-11-31-21
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-18-63-37-72-11-31
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-18-63-37-72-11
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-18-63-37-72
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-18-63-37-15
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-18-63-37
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-18-63
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-18-63-37-62
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-18-63-37-72-11-31-21
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-18-63-37-72-11-31
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-18-63-37-72-11
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-18-63-37-72
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-18-63-37-15
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-18-63-37
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-18-63
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-18-15
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4-18
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43-4
+ℹ️  [Sintático] 44-35-51-50-35-42-59-43
+ℹ️  [Sintático] 44-35-51-50-35-42-59
+ℹ️  [Sintático] 44-35-51-50-35-42-15
+ℹ️  [Sintático] 44-35-51-50-35-42
+ℹ️  [Sintático] 44-35-51-50-35
+ℹ️  [Sintático] 44-35-51-50
+ℹ️  [Sintático] 44-35-51-15
+ℹ️  [Sintático] 44-35-51
+ℹ️  [Sintático] 44-35-18-63-37-62-13
+ℹ️  [Sintático] 44-35-18-63-37-62
+ℹ️  [Sintático] 44-35-18-63-37-65-7-24
+ℹ️  [Sintático] 44-35-18-63-37-65-7
+ℹ️  [Sintático] 44-35-18-63-37-65
+ℹ️  [Sintático] 44-35-18-63-37-15
+ℹ️  [Sintático] 44-35-18-63-37
+ℹ️  [Sintático] 44-35-18-63
+ℹ️  [Sintático] 44-35-18-63-37-62
+ℹ️  [Sintático] 44-35-18-63-37-64-29-7
+ℹ️  [Sintático] 44-35-18-63-37-64-29
+ℹ️  [Sintático] 44-35-18-63-37-64
+ℹ️  [Sintático] 44-35-18-63-37-65-7-24
+ℹ️  [Sintático] 44-35-18-63-37-65-7
+ℹ️  [Sintático] 44-35-18-63-37-65
+ℹ️  [Sintático] 44-35-18-63-37-42-67-66-43
+ℹ️  [Sintático] 44-35-18-63-37-42-67-66
+ℹ️  [Sintático] 44-35-18-63-37-42-67-5
+ℹ️  [Sintático] 44-35-18-63-37-42-67
+ℹ️  [Sintático] 44-35-18-63-37-42-67-66-40
+ℹ️  [Sintático] 44-35-18-63-37-42-67-66
+ℹ️  [Sintático] 44-35-18-63-37-42-67-5
+ℹ️  [Sintático] 44-35-18-63-37-42-67
+ℹ️  [Sintático] 44-35-18-63-37-42-15
+ℹ️  [Sintático] 44-35-18-63-37-42
+ℹ️  [Sintático] 44-35-18-63-37
+ℹ️  [Sintático] 44-35-18-63
+ℹ️  [Sintático] 44-35-18-15
+ℹ️  [Sintático] 44-35-18
+ℹ️  [Sintático] 44-35
+ℹ️  [Sintático] 44
+✅ [Sintático] Análise sintática concluída com sucesso
+✅ [Semântico] Análise semântica concluída com sucesso
